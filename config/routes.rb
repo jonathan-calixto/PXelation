@@ -1,11 +1,11 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
-#                  api_user POST   /api/user(.:format)                                                                      api/users#create {:format=>:json}
+#                      root GET    /                                                                                        static_pages#root
+#            api_user_index POST   /api/user(.:format)                                                                      api/user#create {:format=>:json}
 #               api_session GET    /api/session(.:format)                                                                   api/sessions#show {:format=>:json}
 #                           DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
-#                      root GET    /                                                                                        static_pages#root
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -14,10 +14,11 @@
 
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-namespace :api, defaults: {format: :json} do
-  resource :user, only: [:create]
-  resource :session, only: [:create, :destroy, :show]
-end
+  root to: "static_pages#root"
 
-  root "static_pages#root"
+  namespace :api, defaults: {format: :json} do
+    resources :user, only: [:create]
+    resource :session, only: [:create, :destroy, :show]
+  end
+
 end
