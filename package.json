@@ -10,6 +10,7 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
@@ -22,7 +23,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development --watch"
+    "start": "webpack --mode=development --watch",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   },
   "repository": {
     "type": "git",
@@ -34,5 +40,6 @@
   "bugs": {
     "url": "https://github.com/Serendipitydeus/PXelation/issues"
   },
-  "homepage": "https://github.com/Serendipitydeus/PXelation#readme"
+  "homepage": "https://github.com/Serendipitydeus/PXelation#readme",
+  "devDependencies": {}
 }
