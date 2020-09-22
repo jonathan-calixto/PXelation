@@ -9,7 +9,7 @@ export default class Login extends React.Component {
             <div>
                 <Link to='/login/'>Log in</Link>
                 <br/>
-                <Link to='signup'>Sign up</Link>
+                <Link to='/signup/'>Sign up</Link>
             </div>
         )
 
