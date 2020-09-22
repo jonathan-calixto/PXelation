@@ -12,20 +12,21 @@ const App = () => (
             <header>
                 <h1>PXelation</h1>
                 <div>
-                    <Link>Discover</Link>
-                    <Link>Licensing</Link>
-                    <Link>Memberships</Link>
-                    <Link>Quests</Link>
-                    <Link>Creator Stories</Link>
-                    <Link>Blog</Link>
+                    <Link to=''>Discover</Link>
+                    <Link to=''>Licensing</Link>
+                    <Link to=''>Memberships</Link>
+                    <Link to=''>Quests</Link>
+                    <Link to=''>Creator Stories</Link>
+                    <Link to=''>Blog</Link>
                 </div>
                 <div>
                     Search PXelation Box
                 </div>
                 <LoginContainer />
             </header>
-            <Route exact path="/login" component={LoginFormContainer} />
-            <Route exact path="/signup" component={SignupFormContainer} />
+            {/* <Route exact path="/" component={HomeFeedContainer} /> */}
+            <Route path="/login" component={LoginFormContainer} />
+            <Route path="/signup" component={SignupFormContainer} />
         </header>
     </div>
 );

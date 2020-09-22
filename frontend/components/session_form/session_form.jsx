@@ -25,11 +25,12 @@ export default class SessionForm extends React.Component {
     }
 
     renderErrors(){
+        const { errors } = this.props;
         return (
             <ul>
-                {/* {this.props.errors.map((error, idx) => (
+                {errors.map((error, idx) => (
                     <li key={`error-${idx}`}>{error}</li>
-                ))} */}
+                ))}
             </ul>
         );
     }
@@ -44,6 +45,7 @@ export default class SessionForm extends React.Component {
                         <div>
                             <label>
                                 Username:
+                                <br/>
                                 <input 
                                     type="text"
                                     value={this.state.username}
@@ -51,8 +53,10 @@ export default class SessionForm extends React.Component {
                                 />
                             </label>
                             <br/>
+                            <br/>
                             <label>
                                 Email:
+                                <br/>
                                 <input
                                     type="text"
                                     value={this.state.email}
@@ -60,14 +64,17 @@ export default class SessionForm extends React.Component {
                                 />
                             </label>
                             <br/>
+                            <br/>
                             <label>
                                 Password:
+                                <br/>
                                 <input 
-                                    type="text"
+                                    type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                 />
                             </label>
+                            <br/>
                             <br/>
                             <input type="submit" value={this.props.formType}/>
                         </div>
@@ -83,6 +90,7 @@ export default class SessionForm extends React.Component {
                             {this.renderErrors()}
                             <label>
                                 Username:
+                                <br/>
                                 <input
                                     type="text"
                                     value={this.state.username}
@@ -90,14 +98,17 @@ export default class SessionForm extends React.Component {
                                 />
                             </label>
                             <br/>
+                            <br/>
                             <label>
                                 Password:
+                                <br/>
                                 <input
-                                    type="text"
+                                    type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                 />
                             </label>
+                            <br/>
                             <br/>
                             <input type="submit" value={this.props.formType} />
                         </div>
