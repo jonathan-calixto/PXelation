@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import LoginContainer from './session/login_container';
+import LoginContainer from './login/login_container';
 
 
 const App = () => (
