@@ -46,6 +46,7 @@ body {
     display: flex;
     align-content: space-between;
     padding: 25px;
+    font-size: 16px;
 }
 
 .session-login > * {
@@ -59,6 +60,22 @@ body {
     display: flex;
     height: fit-content;
     border-radius: 15px;
+    &:hover{
+        cursor: pointer;
+        color: lightblue;
+    }
+    // font-size: 20px;
+}
+
+.sSignup {
+    border: solid 2px black;
+    // display: flex;
+    height: fit-content;
+    border-radius: 15px;
+    &:hover{
+        cursor: pointer;
+        color: lightblue;
+    }
 }
 
 .slogin {

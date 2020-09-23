@@ -9,7 +9,7 @@ export default class Login extends React.Component {
             <div className='session-login'>
                 <Link className='slogout' to='/login/'>Log in</Link>
                 <br/>
-                <Link className='slogout' to='/signup/'>Sign up</Link>
+                <Link className='sSignup' to='/signup/'>Sign up</Link>
             </div>
         )
 
