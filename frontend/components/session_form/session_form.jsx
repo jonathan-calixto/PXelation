@@ -39,10 +39,10 @@ export default class SessionForm extends React.Component {
         if (this.props.formType === 'signup') {
             return (
                 <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <h2>Sign up to PXelation</h2>
-                        {this.renderErrors()}
+                    <form className='login-form' onSubmit={this.handleSubmit}>
                         <div>
+                        <span>Sign up to PXelation</span>
+                        {this.renderErrors()}
                             <label>
                                 Username:
                                 <br/>
@@ -84,9 +84,9 @@ export default class SessionForm extends React.Component {
         } else {
             return (
                 <div>
-                    <form onSubmit={this.handleSubmit}>
+                    <form className='login-form' onSubmit={this.handleSubmit}>
                         <div>
-                            <h2>Log in to PXelation</h2>
+                            <span>Log in to PXelation</span>
                             {this.renderErrors()}
                             <label>
                                 Username:

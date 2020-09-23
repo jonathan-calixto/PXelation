@@ -7,27 +7,27 @@ import SignupFormContainer from './session_form/signup_form_container';
 
 
 const App = () => (
-    <div>
+    <div className='main-div'>
         <header>
-            <header>
-                <h1>PXelation</h1>
-                <div>
-                    <Link to=''>Discover</Link>
-                    <Link to=''>Licensing</Link>
-                    <Link to=''>Memberships</Link>
-                    <Link to=''>Quests</Link>
-                    <Link to=''>Creator Stories</Link>
-                    <Link to=''>Blog</Link>
+            <header className='user-nav'>
+                <h3>PXelation</h3>
+                <div className='user-links'>
+                    <Link className='nav-link' to=''>Discover <i className="fas fa-chevron-down"></i></Link>
+                    <Link className='nav-link' to=''>Licensing <i className="fas fa-chevron-down"></i></Link>
+                    <Link className='nav-link' to=''>Memberships</Link>
+                    <Link className='nav-link' to=''>Quests</Link>
+                    <Link className='nav-link' to=''>Creator Stories</Link>
+                    <Link className='nav-link' to=''>Blog</Link>
                 </div>
-                <div>
-                    Search PXelation Box
-                </div>
+                <input type="text" placeholder='Search PXelation' className='search-bar'/>
                 <LoginContainer />
             </header>
             {/* <Route exact path="/" component={HomeFeedContainer} /> */}
+        </header>
+        <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
-        </header>
+        </Switch>
     </div>
 );
 

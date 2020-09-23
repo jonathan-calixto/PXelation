@@ -6,20 +6,20 @@ export default class Login extends React.Component {
         const {currentUser, logout} = this.props;
 
         const sessionLogin = () => (
-            <div>
-                <Link to='/login/'>Log in</Link>
+            <div className='session-login'>
+                <Link className='slogout' to='/login/'>Log in</Link>
                 <br/>
-                <Link to='/signup/'>Sign up</Link>
+                <Link className='slogout' to='/signup/'>Sign up</Link>
             </div>
         )
 
         const sessionLogout = () => (
-            <div>
-                <button onClick={logout}>Logout</button>
-                <button>Profile</button>
-                <button>Messages</button>
-                <button>Notifications</button>
-                <button>Upload</button>
+            <div className='session-login'>
+                <button className='slogout' onClick={logout}>Logout</button>
+                <button className='slogout' ><i class="fas fa-user-circle"></i></button>
+                <button className='slogout' ><i class="far fa-paper-plane"></i></button>
+                <button className='slogout' ><i class="far fa-bell"></i></button>
+                <button className='sessionUpload' ><i class="fas fa-arrow-up"></i> Upload</button>
             </div>
         )
 
