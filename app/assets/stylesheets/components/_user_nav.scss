@@ -1,18 +1,47 @@
+// .main-div{
+//     display: flex;
+//     align-items: center;
+// }
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: white;
+}
+
+.session-login {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+    font-size: 16px;
+    height: fit-content;
+}
+.nav-header{
+    // display: flex;
+    // justify-content: center;
+    // top: -20px;
+}
 .user-nav {
     display: flex;
-    text-align: left;
-    align-content: center;
-    justify-content: center;
+    // text-align: left;
+    // align-content: center;
+    justify-content: flex-start;
     // padding: 25px;
-    height: 50px;
+    height: fit-content;
     width: 100%;
-    margin: auto;
-    padding-bottom: 15px;
-    border-bottom: solid 1px black;
+    // text-align: center;
+    // margin: auto;
+    // padding-bottom: 15px;
+    // border-bottom: solid 1px black;
     background: white;
 }
 
-.user-links {
+.nav-links {
+    display: flex;
+    position: relative;
+    align-content: flex-start;
     padding-top: 25px;
 }
 
@@ -31,27 +60,9 @@ body {
     background: #f2f2f2;
 }
 
-.login-form {
-    background-color: white;
-    border: 1px solid rgb(238, 239, 242);
-    height: auto;
-    display: flex;
-    justify-content: center;
-    padding: 25px;
-    width: auto;
-    max-width: 350px;
-}
-
-.session-login {
-    display: flex;
-    align-content: space-between;
-    padding: 25px;
-    font-size: 16px;
-}
-
 .session-login > * {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     padding: 5px;
 }
 
@@ -67,10 +78,23 @@ body {
     // font-size: 20px;
 }
 
-.sSignup {
+.login-button{
+    display: flex;
+    justify-content: flex-start;
+    // background-color: red;
+    height: fit-content;
+    width: max-content;
+    &:hover{
+        cursor: pointer;
+        color: lightblue;
+    }
+}
+
+.signup-button {
     border: solid 2px black;
     // display: flex;
     height: fit-content;
+    width: max-content;
     border-radius: 15px;
     &:hover{
         cursor: pointer;
@@ -86,8 +110,16 @@ body {
     }
 }
 
-.slogout {
+.login-icon {
     // padding: px;
+    top: -10px;
+    display: flex;
+    justify-content: flex-start;
+    // background-color: red;
+    height: fit-content;
+    width: 30px;
+    font-size: 24px;
+    color: grey;
     &:hover{
         cursor: pointer;
         color: lightblue;
@@ -96,11 +128,13 @@ body {
 
 .search-bar {
     display: flex;
-    margin-top: 10px;
+    margin-top: -10px;
     background-color: #f2f2f2;
     border-radius: 25px;
-    margin-right: 16px;
+    margin-right: 25px;
     border: none;
-    text-align: center;
+    // text-align: center;
+    text-indent: 20px;
+    padding: 20px 10px 20px 10px;
 }
 

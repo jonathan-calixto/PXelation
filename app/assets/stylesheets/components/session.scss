@@ -1,0 +1,51 @@
+.session{
+    position: relative;
+    // left: 50%;
+    // right: 50%;
+    // transform: translate(-50%, -50%);
+}
+.outer-div{
+    // position: absolute;
+    // left: 50%;
+    // right: 50%;
+    // transform: translate(50%, 50%);
+    // margin-left: -20%;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // left: 0;
+    // margin: auto;
+    height: 100%;
+    width: 100%;
+}
+.session-form {
+    // position: absolute;
+    display: flex;
+    align-content: center;
+    background-color: white;
+    border: 1px solid rgb(238, 239, 242);
+    height: 500px;
+    justify-content: center;
+    padding: 25px;
+    // width: fit-content;
+    // max-width: 350px;
+    width: 400px;
+    position: absolute;
+    // left: 50%;
+    // right: 50%;
+    // transform: translate(50%, 50%);
+    // margin-left: -20%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    input{
+
+        border: solid 1px black;
+    }
+    span{
+        display: flex;
+        justify-content: center;
+    }
+}
