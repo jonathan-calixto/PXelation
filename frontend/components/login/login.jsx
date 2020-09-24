@@ -9,9 +9,9 @@ export default class Login extends React.Component {
             <div className='nav-login'>
                 <input type="text" placeholder='Search PXelation'/>
                 <br/>
-                <Link className='nav-Link' to='/login/'>Log in</Link>
+                <Link className='nav-Link' to='/login/'><span className='login-link'>Log in</span></Link>
                 <br/>
-                <Link className='nav-Link' to='/signup/'>Sign up</Link>
+                <Link className='nav-Link' to='/signup/'><span className='signup-link'>Sign up</span></Link>
             </div>
         )
 
@@ -19,10 +19,10 @@ export default class Login extends React.Component {
             <div className='nav-login'>
                 <input type="text" placeholder='Search PXelation'/>
                 <button onClick={logout}><i class="fas fa-sign-out-alt"></i></button>
-                <button><i class="fas fa-user-circle"></i></button>
-                <button><i class="far fa-paper-plane"></i></button>
-                <button><i class="far fa-bell"></i></button>
-                <button><i class="fas fa-arrow-up"></i> Upload</button>
+                <button className='button-link'><i class="fas fa-user-circle"></i></button>
+                <button className='button-link'><i class="far fa-paper-plane"></i></button>
+                <button className='button-link'><i class="far fa-bell"></i></button>
+                <button className='button-upload'><i class="fas fa-arrow-up"></i> Upload</button>
             </div>
         )
 

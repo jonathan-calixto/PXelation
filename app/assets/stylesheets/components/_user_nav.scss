@@ -14,7 +14,6 @@
     background-color: white;
     width: 100%;
     background-color: white;
-
 }
 
 .nav-login {
@@ -25,6 +24,51 @@
 
     .nav-Link {
         margin: 0 5px;
+    }
+
+    .login-link {
+        font-size: 18px;
+        &:hover {
+            color: lightsteelblue;
+        }
+    }
+
+    .signup-link {
+        border: solid 2px black;
+        padding: 5px;
+        border-radius: 25px;
+        font-size: 18px;
+        &:hover {
+            // color: lightsteelblue;
+            background-color: lightgray;
+        }
+    }
+
+    .button-link {
+        margin: 0 10px;
+        font-size: 24px;
+        &:hover {
+            color: lightsteelblue;
+        }
+    }
+
+    .button-upload {
+        border: solid 2px black;
+        padding: 5px 25px;
+        border-radius: 25px;
+        &:hover {
+            // color: lightsteelblue;
+            background-color: lightgray;
+        }
+    }
+
+    input {
+        background-color: ghostwhite;
+        border-radius: 25px;
+        text-indent: 10px;
+        margin: 0 20px;
+        // min-width: 100px;
+        padding: 0 20px;
     }
 }
 
@@ -39,10 +83,9 @@
     box-sizing: border-box;
     cursor: pointer;
     margin: 0px 20px;
-}
-
-.nav-links:hover{
-    color: lightsteelblue;
+    &:hover {
+        color: lightsteelblue;
+    }
 }
 
 .listed-items {
