@@ -1,140 +1,53 @@
-// .main-div{
-//     display: flex;
-//     align-items: center;
-// }
-
-.navbar{
+.navbar {
     display: flex;
-    justify-content: center;
-    padding-left: 25px;
-    padding-right: 25px;
-    background-color: white;
-}
-
-.session-login {
-    display: flex;
-    justify-content: flex-end;
-    padding: 25px;
-    font-size: 16px;
-    height: fit-content;
-}
-.nav-header{
-    // display: flex;
-    // justify-content: center;
-    // top: -20px;
-}
-.user-nav {
-    display: flex;
-    // text-align: left;
-    // align-content: center;
-    justify-content: flex-start;
-    // padding: 25px;
-    height: fit-content;
+    justify-content: center; // centers my navbar-div
+    padding: 30px 10%;
+    margin: 0 auto;
+    padding: 0;
     width: 100%;
-    // text-align: center;
-    // margin: auto;
-    // padding-bottom: 15px;
-    // border-bottom: solid 1px black;
-    background: white;
+}
+
+.navbar-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 27px 0%; //reduce padding when you increase the size of text/containers
+    background-color: white;
+    width: 100%;
+    background-color: white;
+
+}
+
+.nav-login {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    margin-right: 10x;
+
+    .nav-Link {
+        margin: 0 5px;
+    }
+}
+
+.nav-links-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
 }
 
 .nav-links {
+    font-size: 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0px 20px;
+}
+
+.nav-links:hover{
+    color: lightsteelblue;
+}
+
+.listed-items {
     display: flex;
-    position: relative;
-    align-content: flex-start;
-    padding-top: 25px;
+    justify-content: space-between;
 }
 
-.nav-link {
-    margin: 20px;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    &:hover{
-        cursor: pointer;
-        color: lightblue;
-    }
-}
-
-body {
-    background: #f2f2f2;
-}
-
-.session-login > * {
-    display: flex;
-    // justify-content: space-between;
-    padding: 5px;
-}
-
-.sessionUpload{
-    border: solid 2px black;
-    display: flex;
-    height: fit-content;
-    border-radius: 15px;
-    &:hover{
-        cursor: pointer;
-        color: lightblue;
-    }
-    // font-size: 20px;
-}
-
-.login-button{
-    display: flex;
-    justify-content: flex-start;
-    // background-color: red;
-    height: fit-content;
-    width: max-content;
-    &:hover{
-        cursor: pointer;
-        color: lightblue;
-    }
-}
-
-.signup-button {
-    border: solid 2px black;
-    // display: flex;
-    height: fit-content;
-    width: max-content;
-    border-radius: 15px;
-    &:hover{
-        cursor: pointer;
-        color: lightblue;
-    }
-}
-
-.slogin {
-    padding: 25px;
-    &:hover{
-        cursor: pointer;
-        color: lightblue;
-    }
-}
-
-.login-icon {
-    // padding: px;
-    top: -10px;
-    display: flex;
-    justify-content: flex-start;
-    // background-color: red;
-    height: fit-content;
-    width: 30px;
-    font-size: 24px;
-    color: grey;
-    &:hover{
-        cursor: pointer;
-        color: lightblue;
-    }
-}
-
-.search-bar {
-    display: flex;
-    margin-top: -10px;
-    background-color: #f2f2f2;
-    border-radius: 25px;
-    margin-right: 25px;
-    border: none;
-    // text-align: center;
-    text-indent: 20px;
-    padding: 20px 10px 20px 10px;
-}
 

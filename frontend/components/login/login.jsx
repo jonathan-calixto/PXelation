@@ -6,23 +6,23 @@ export default class Login extends React.Component {
         const {currentUser, logout} = this.props;
 
         const sessionLogin = () => (
-            <div className='session-login'>
-                <input type="text" placeholder='Search PXelation' className='search-bar' />
+            <div className='nav-login'>
+                <input type="text" placeholder='Search PXelation'/>
                 <br/>
-                <Link className='login-button' to='/login/'>Log in</Link>
+                <Link className='nav-Link' to='/login/'>Log in</Link>
                 <br/>
-                <Link className='signup-button' to='/signup/'>Sign up</Link>
+                <Link className='nav-Link' to='/signup/'>Sign up</Link>
             </div>
         )
 
         const sessionLogout = () => (
-            <div className='session-login'>
-                <input type="text" placeholder='Search PXelation' className='search-bar' />
-                <button className='slogout' onClick={logout}><i class="fas fa-sign-out-alt"></i></button>
-                <button className='login-icon' ><i class="fas fa-user-circle"></i></button>
-                <button className='login-icon' ><i class="far fa-paper-plane"></i></button>
-                <button className='login-icon' ><i class="far fa-bell"></i></button>
-                <button className='sessionUpload' ><i class="fas fa-arrow-up"></i> Upload</button>
+            <div className='nav-login'>
+                <input type="text" placeholder='Search PXelation'/>
+                <button onClick={logout}><i class="fas fa-sign-out-alt"></i></button>
+                <button><i class="fas fa-user-circle"></i></button>
+                <button><i class="far fa-paper-plane"></i></button>
+                <button><i class="far fa-bell"></i></button>
+                <button><i class="fas fa-arrow-up"></i> Upload</button>
             </div>
         )
 

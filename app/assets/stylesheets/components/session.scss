@@ -1,51 +1,46 @@
-.session{
-    position: relative;
-    // left: 50%;
-    // right: 50%;
-    // transform: translate(-50%, -50%);
-}
-.outer-div{
-    // position: absolute;
-    // left: 50%;
-    // right: 50%;
-    // transform: translate(50%, 50%);
-    // margin-left: -20%;
-    // top: 0;
-    // bottom: 0;
-    // right: 0;
-    // left: 0;
-    // margin: auto;
-    height: 100%;
-    width: 100%;
-}
-.session-form {
-    // position: absolute;
+.top-div {
     display: flex;
-    align-content: center;
-    background-color: white;
-    border: 1px solid rgb(238, 239, 242);
-    height: 500px;
-    justify-content: center;
-    padding: 25px;
-    // width: fit-content;
-    // max-width: 350px;
-    width: 400px;
-    position: absolute;
-    // left: 50%;
-    // right: 50%;
-    // transform: translate(50%, 50%);
-    // margin-left: -20%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    input{
+    text-align: center;
+}
 
-        border: solid 1px black;
-    }
-    span{
+.signup-form {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 24px;
+    max-width: 352px;
+    width: 100vw;
+    min-height: 502px;
+    margin: 0 auto;
+    margin-top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-class {
+    width: 350px;
+    h3 {
         display: flex;
         justify-content: center;
+        // font-size: 16px;
+    }
+    input {
+        border: solid 1px darkgray;
+        border-radius: 3px;
+        height: 45px;
+        width: 100%;
+    }
+
+    button {
+        width: 350px;
+        background-color: royalblue;
+        color: white;
+        border-radius: 25px;
+        text-indent: 10px;
+        height: 50px;
+        border-color: rgb(8, 112, 209);
+
+        &:hover {
+            background-color: blue($color: hsl(217, 91%, 41%));
+        }
     }
 }
