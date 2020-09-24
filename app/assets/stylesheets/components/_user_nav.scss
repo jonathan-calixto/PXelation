@@ -66,13 +66,12 @@
         }
     }
 
-    input {
+    .search-bar {
         background-color: ghostwhite;
         border-radius: 25px;
-        text-indent: 10px;
-        margin: 0 20px;
-        // min-width: 100px;
-        padding: 0 20px;
+        text-indent: 0px;
+        margin: 0px 20px;
+        padding: 10px 30px;
     }
 }
 

@@ -7,7 +7,7 @@ export default class Login extends React.Component {
 
         const sessionLogin = () => (
             <div className='nav-login'>
-                <input type="text" placeholder='Search PXelation'/>
+                <input className='search-bar'type="text" placeholder='Search PXelation'/>
                 <br/>
                 <Link className='nav-Link' to='/login/'><span className='login-link'>Log in</span></Link>
                 <br/>
@@ -17,7 +17,7 @@ export default class Login extends React.Component {
 
         const sessionLogout = () => (
             <div className='nav-login'>
-                <input type="text" placeholder='Search PXelation'/>
+                <input className ='search-bar' type="text" placeholder='Search PXelation'/>
                 <button onClick={logout}><i className="fas fa-sign-out-alt"></i></button>
                 <button className='button-link button-user'><i className="fas fa-user-circle"></i></button>
                 <button className='button-link'><i className="far fa-paper-plane"></i></button>
