@@ -52,6 +52,10 @@
         }
     }
 
+    .button-user {
+        color: grayscale($color: hsl(0, 3%, 79%));
+    }
+
     .button-upload {
         border: solid 2px black;
         padding: 5px 25px;

@@ -19,7 +19,7 @@ export default class Login extends React.Component {
             <div className='nav-login'>
                 <input type="text" placeholder='Search PXelation'/>
                 <button onClick={logout}><i class="fas fa-sign-out-alt"></i></button>
-                <button className='button-link'><i class="fas fa-user-circle"></i></button>
+                <button className='button-link button-user'><i class="fas fa-user-circle"></i></button>
                 <button className='button-link'><i class="far fa-paper-plane"></i></button>
                 <button className='button-link'><i class="far fa-bell"></i></button>
                 <button className='button-upload'><i class="fas fa-arrow-up"></i> Upload</button>
