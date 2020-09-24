@@ -9,4 +9,4 @@
 
 User.destroy_all
 
-user1 = User.create!({username: "nathan0922", email:"nathan@yahoo.com" ,password: "123456"})
+user1 = User.create!(username: "nathan0922", email:"nathan@yahoo.com" ,password: "123456")
