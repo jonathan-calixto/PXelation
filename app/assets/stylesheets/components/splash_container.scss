@@ -1,0 +1,49 @@
+.background-img {
+    background-image: url('/assets/looking.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 700px;
+}
+
+.splash-triple-container {
+    display: flex;
+    padding: 50px 50px;
+
+    .text-boxes {
+        padding: 0 50px;
+        h1 {
+            font-weight: bolder;
+            font-size: x-large;
+        }    
+    }
+}
+
+.splash-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: solid 1px darkgray;
+    background-color: ghostwhite;
+    height: 50px;
+
+    .copyright {
+        margin-top: 10px;
+    }
+
+    i {
+        padding: 5px;
+        text-indent: 20px;
+    }
+
+    .footer-link {
+        margin-top: 10px;
+        padding: 5px;
+        margin-right: 20px;
+        &:hover {
+            cursor: pointer;
+            color: lightsteelblue;
+        }
+    }
+}
