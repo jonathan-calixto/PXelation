@@ -9,8 +9,13 @@ export default class SessionForm extends React.Component {
             email: '',
             password: ''
         };
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoUser = this.demoUser.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.clearErrors();
     }
 
     demoUser(event){
@@ -19,6 +24,7 @@ export default class SessionForm extends React.Component {
             username: 'nathan0922',
             password: '123456'
         };
+
         this.props.processForm(demoUser);
     }
 
@@ -40,7 +46,7 @@ export default class SessionForm extends React.Component {
         return (
             <ul>
                 {errors.map((error, idx) => (
-                    <li key={`error-${idx}`}>{error}</li>
+                    <li key={`error-${idx}`}> <span className='form-errors'>{error}</span></li>
                 ))}
             </ul>
         );
@@ -53,7 +59,7 @@ export default class SessionForm extends React.Component {
                     <form className='form-class' onSubmit={this.handleSubmit}>
                         <h3><span>Sign up to PXelation</span></h3>
                         <br/>
-                        {this.renderErrors()}
+                        <span>{this.renderErrors()}</span>
                             <label>
                                 Username:
                                 <br/>
@@ -94,7 +100,7 @@ export default class SessionForm extends React.Component {
                     <form className='form-class' onSubmit={this.handleSubmit}>
                         <h3><span>Log in to PXelation</span></h3>
                         <br/>
-                        {this.renderErrors()}
+                        <span>{this.renderErrors()}</span>
                         <br/>
                         <label>
                             Username:

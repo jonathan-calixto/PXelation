@@ -43,4 +43,14 @@
             background-color: blue($color: hsl(217, 91%, 41%));
         }
     }
+
+    .form-errors {
+        background-color: #ff4c4c;
+        border-radius: 3px;
+        padding: 10px;
+        width: 333px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
 }
