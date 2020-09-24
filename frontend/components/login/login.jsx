@@ -7,11 +7,7 @@ export default class Login extends React.Component {
 
         const sessionLogin = () => (
             <div className='nav-login'>
-<<<<<<< HEAD
-                <input className='search-bar'type="text" placeholder='Search PXelation'/>
-=======
                 <input className='search-bar' type="text" placeholder='Search PXelation'/>
->>>>>>> auth
                 <br/>
                 <Link className='nav-Link' to='/login/' onClick={clearErrors}><span className='login-link'>Log in</span></Link>
                 <br/>
