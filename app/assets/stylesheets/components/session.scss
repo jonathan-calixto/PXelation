@@ -38,6 +38,7 @@
         text-indent: 10px;
         height: 50px;
         border-color: rgb(8, 112, 209);
+        text-align: center;
 
         &:hover {
             background-color: blue($color: hsl(217, 91%, 41%));
