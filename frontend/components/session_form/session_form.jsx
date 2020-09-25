@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 
 export default class SessionForm extends React.Component {
     constructor(props){
@@ -125,8 +125,7 @@ export default class SessionForm extends React.Component {
                         <button>{this.props.formType}</button>
                         <br/><br/>
                         <button onClick={this.demoUser}>Demo User</button>
-
-                        <p>Not a user?<Link>Sign up!</Link></p>
+                        <p className='login-bottom-link'>Not a user? <Link to='/signup/'>Sign up!</Link></p>
                     </form>
                 </div>
             );
