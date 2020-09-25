@@ -13,7 +13,8 @@ export default class SplashPageContainer extends React.Component {
 
                 <div className='splash-triple-container'>
                     <div className='text-boxes'>
-                        <img src="/assets/leaf.png" />
+                        {/* <img src="/assets/leaf.png" /> */}
+                        <h1><i className="fab fa-pagelines"></i></h1>
                         <span><h1>Grow as a photographer</h1></span>
                         <br/>
                         <span>
@@ -21,7 +22,8 @@ export default class SplashPageContainer extends React.Component {
                         </span>
                     </div>
                     <div className='text-boxes'>
-                        <img src="/assets/ruler.png" />
+                        {/* <img src="/assets/ruler.png" /> */}
+                        <h1><i className="fas fa-pencil-ruler"></i></h1>
                         <span><h1>Build your career</h1></span>
                         <br/>
                         <span>
@@ -29,7 +31,8 @@ export default class SplashPageContainer extends React.Component {
                         </span>
                     </div>
                     <div className='text-boxes'>
-                        <img src="/assets/graph.png" />
+                        {/* <img src="/assets/graph.png" /> */}
+                        <h1><i className="fas fa-chart-bar"></i></h1>
                         <span><h1>See how you&#39;re performing</h1></span>
                         <br/>
                         <span>

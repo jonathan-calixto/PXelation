@@ -12,7 +12,7 @@
 .navbar-div {
     display: flex;
     justify-content: space-between;
-    padding: 27px 0%; //reduce padding when you increase the size of text/containers
+    padding: 15px 0%; //reduce padding when you increase the size of text/containers
     background-color: white;
     width: 100%;
     background-color: white;
@@ -23,27 +23,35 @@
     justify-content: space-between;
     margin: 0px 10px;
     margin-right: 10x;
+    padding-top: 5px;
 
     .nav-Link {
         margin: 0px 5px;
-    }
+        margin-top: 8px;
 
-    .login-link {
-        font-size: 18px;
-        &:hover {
-            color: lightsteelblue;
-        }
-    }
+        .login-link {
+            font-size: 18px;
+            font-weight: 500;
 
-    .signup-link {
-        border: solid 2px black;
-        padding: 5px;
-        border-radius: 25px;
-        font-size: 18px;
-        &:hover {
-            // color: lightsteelblue;
-            background-color: lightgray;
+            &:hover {
+                color: lightsteelblue;
+            }
         }
+        
+        .signup-link {
+            border: solid 2px black;
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 500;
+    
+            &:hover {
+                // color: lightsteelblue;
+                background-color: lightgray;
+            }
+        }
+
+        
     }
 
     .button-link {

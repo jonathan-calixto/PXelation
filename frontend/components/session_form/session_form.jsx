@@ -25,7 +25,7 @@ export default class SessionForm extends React.Component {
             password: '123456'
         };
 
-        this.props.processForm(demoUser);
+        this.props.loginDemoUser(demoUser);
     }
 
     handleSubmit(event){
@@ -57,8 +57,11 @@ export default class SessionForm extends React.Component {
             return (
                 <div className='signup-form'>
                     <form className='form-class' onSubmit={this.handleSubmit}>
-                        <h3><span>Sign up to PXelation</span></h3>
-                        <br/>
+                        {/* <h3><span>Sign up to PXelation</span></h3> */}
+                        <button onClick={this.demoUser}>Demo User</button>
+                        <br/><br/>
+                        <div className='p-spacer-div'><p>_______________________   or   _______________________</p></div>
+                        <br/><br/>
                         <span>{this.renderErrors()}</span>
                             <label>
                                 Username:
@@ -91,6 +94,7 @@ export default class SessionForm extends React.Component {
                             </label>
                             <br/><br/>
                             <button type="submit">{this.props.formType}</button>
+                        <p className='login-bottom-link'><span>Already have an account? <Link to='/login/'>Log in!</Link></span></p>
                     </form>
                 </div>
             );
@@ -125,7 +129,7 @@ export default class SessionForm extends React.Component {
                         <button>{this.props.formType}</button>
                         <br/><br/>
                         <button onClick={this.demoUser}>Demo User</button>
-                        <p className='login-bottom-link'>Not a user? <Link to='/signup/'>Sign up!</Link></p>
+                        <p className='login-bottom-link'><span>Not a user? <Link to='/signup/'>Sign up!</Link></span></p>
                     </form>
                 </div>
             );

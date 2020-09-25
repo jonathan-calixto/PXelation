@@ -15,20 +15,31 @@
     margin-top: 100px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 100px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 4px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px -2px rgba(0,0,0,0.75);
 }
 
 .form-class {
     width: 350px;
+
     h3 {
         display: flex;
         justify-content: center;
+        font-weight: 500;
+        font-size: 24px;
         // font-size: 16px;
     }
     input {
         border: solid 1px darkgray;
-        border-radius: 3px;
+        border-radius: 5px;
         height: 45px;
         width: 100%;
+        text-indent: 20px;
+        &:focus {
+            border: solid 2px royalblue;
+        }
+        
     }
 
     button {
@@ -46,6 +57,11 @@
         }
     }
 
+    .p-spacer-div {
+        display: flex;
+        justify-content: center;
+    }
+
     .form-errors {
         background-color: #ff4c4c;
         border-radius: 3px;
@@ -58,5 +74,7 @@
 
     .login-bottom-link {
         margin-top: 50px;
+        display: flex;
+        justify-content: center;
     }
 }
