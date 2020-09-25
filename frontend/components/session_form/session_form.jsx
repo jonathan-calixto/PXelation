@@ -63,6 +63,7 @@ export default class SessionForm extends React.Component {
                         <div className='p-spacer-div'><p>_______________________   or   _______________________</p></div>
                         <br/><br/>
                         <span>{this.renderErrors()}</span>
+                        <br/>
                             <label>
                                 Username:
                                 <br/>
