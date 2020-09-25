@@ -1,5 +1,7 @@
 .navbar {
     display: flex;
+    position: sticky;
+    top: 0;
     justify-content: center; // centers my navbar-div
     padding: 30px 10%;
     margin: 0 auto;

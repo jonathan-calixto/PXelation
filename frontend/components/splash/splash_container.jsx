@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default class SplashPageContainer extends React.Component {
     render(){
@@ -7,7 +8,7 @@ export default class SplashPageContainer extends React.Component {
                 <div className='background-img'>
                     <h1><span>Discover and share the world''s best photos.</span></h1>
                     <p><span>Get inspired with incredible photos from diver styles and genres around the world. We&#39;re not guided by fads-just great photography.</span></p>
-                    <div><button>Sign Up</button></div>
+                    <Link to='/signup/' className='signup-button'>Sign Up</Link>
                 </div>
 
                 <div className='splash-triple-container'>
