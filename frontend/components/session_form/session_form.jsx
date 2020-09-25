@@ -125,6 +125,8 @@ export default class SessionForm extends React.Component {
                         <button>{this.props.formType}</button>
                         <br/><br/>
                         <button onClick={this.demoUser}>Demo User</button>
+
+                        <p>Not a user?<Link>Sign up!</Link></p>
                     </form>
                 </div>
             );

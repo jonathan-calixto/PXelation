@@ -14,7 +14,6 @@
         font-size: 36px;
         font-weight: bolder;
         margin-left: 1000px;
-        // margin-top: 100px;
         padding-top: 150px;
     }
 
@@ -63,7 +62,6 @@
 
 .splash-footer {
     display: flex;
-    // flex-shrink: 0;
     justify-content: space-between;
     position: fixed;
     left: 0;
@@ -81,7 +79,7 @@
         padding: 5px;
         text-indent: 20px;
     }
-    
+
     .triple-links {
         display: flex;
         justify-content: space-between;

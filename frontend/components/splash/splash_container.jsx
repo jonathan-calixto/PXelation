@@ -6,7 +6,7 @@ export default class SplashPageContainer extends React.Component {
         return (
             <div>
                 <div className='background-img'>
-                    <h1><span>Discover and share the world''s best photos.</span></h1>
+                    <h1><span>Discover and share the world&#39;s best photos.</span></h1>
                     <p><span>Get inspired with incredible photos from diver styles and genres around the world. We&#39;re not guided by fads-just great photography.</span></p>
                     <Link to='/signup/' className='signup-button'>Sign Up</Link>
                 </div>
