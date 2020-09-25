@@ -13,7 +13,7 @@ export default class SplashPageContainer extends React.Component {
 
                 <div className='splash-triple-container'>
                     <div className='text-boxes'>
-                        <img src="" alt=""/>
+                        <img src="/assets/leaf.png" />
                         <span><h1>Grow as a photographer</h1></span>
                         <br/>
                         <span>
@@ -21,7 +21,7 @@ export default class SplashPageContainer extends React.Component {
                         </span>
                     </div>
                     <div className='text-boxes'>
-                        <img src="" alt=""/>
+                        <img src="/assets/ruler.png" />
                         <span><h1>Build your career</h1></span>
                         <br/>
                         <span>
@@ -29,7 +29,7 @@ export default class SplashPageContainer extends React.Component {
                         </span>
                     </div>
                     <div className='text-boxes'>
-                        <img src="" alt=""/>
+                        <img src="/assets/graph.png" />
                         <span><h1>See how you&#39;re performing</h1></span>
                         <br/>
                         <span>
@@ -40,14 +40,14 @@ export default class SplashPageContainer extends React.Component {
 
                 <footer> {/*center the div that exists here,  flex and space between*/}
                     <div className='splash-footer'>
-                        <div>
-                            <span className='copyright'>
+                        <div className='copyright'>
+                            <span>
                                 <h2><i className="far fa-copyright"></i>PXelation</h2>
                             </span>
                         </div>
                         <div className='triple-links'>
-                            <span className='footer-link'><a href="">LinkedIn</a></span>
-                            <span className='footer-link'><a href="">GitHub</a></span>
+                            <span className='footer-link'><a href="https://www.linkedin.com/in/calixtojonathan/">LinkedIn</a></span>
+                            <span className='footer-link'><a href="https://github.com/Serendipitydeus/PXelation">GitHub</a></span>
                             <span className='footer-link'><a href="">Jonathan Calixto</a></span>
                         </div>
                     </div>
