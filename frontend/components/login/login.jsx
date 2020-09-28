@@ -57,7 +57,7 @@ export default class Login extends React.Component {
 
                 <button className='button-link'><i className="far fa-paper-plane"></i></button>
                 <button className='button-link'><i className="far fa-bell"></i></button>
-                <button className='button-upload'><i className="fas fa-arrow-up"></i> Upload</button>
+                <Link to="/photos/upload" className='button-upload'><i className="fas fa-arrow-up"></i> Upload</Link>
             </div>
         )
 

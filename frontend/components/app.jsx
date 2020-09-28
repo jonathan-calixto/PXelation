@@ -6,6 +6,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import SplashPageContainer from './splash/splash_container';
+import PhotoUploadContainer from './photos/photo_upload_container';
 
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
                 <Route exact path="/" component={SplashPageContainer} />
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <Route path="/photos/upload" component={PhotoUploadContainer} />
             </Switch>
     </div>
 );
