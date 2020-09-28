@@ -3,6 +3,22 @@ import { Link } from 'react-router-dom';
 import ProfileButtonContainer from '../buttons/profile_button_container';
 
 export default class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            show: false
+        };
+        this.handleBlur = this.handleBlur.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleBlur(e) {
+        this.setState({ show: false });
+    }
+
+    handleClick() {
+        this.setState({ show: !this.state.show });
+    }
 
     render(){
         const {currentUser, logout, clearErrors} = this.props;
@@ -22,7 +38,22 @@ export default class Login extends React.Component {
                 <input className='search-bar' type="text" placeholder='Search PXelation'/>
 
                 <button onClick={logout}><i className="fas fa-sign-out-alt"></i></button>
-                <ProfileButtonContainer />
+                {/* <ProfileButtonContainer /> */}
+
+                <div className='button-dropdown'>
+                    <button className='button-link button-user' onClick={this.handleClick} onBlur={this.handleBlur}><i className="fas fa-user-circle"></i></button>
+
+                    {this.state.show ? (
+                        <ul id="user-dropdown" className="user-dropdown">
+                            <li>
+                                <ul className="editions">
+                                    <span className="dropdown-subtitle">{currentUser.username}</span>
+                                    <li><button onClick={logout}><i className="fas fa-sign-out-alt"></i></button></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    ) : null}
+                </div>
 
                 <button className='button-link'><i className="far fa-paper-plane"></i></button>
                 <button className='button-link'><i className="far fa-bell"></i></button>

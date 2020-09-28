@@ -1,4 +1,5 @@
 import React from 'react';
+import { logoutCurrentUser } from '../../actions/session_actions';
 
 export default class ProfileButtonContainer extends React.Component {
 
@@ -20,7 +21,7 @@ export default class ProfileButtonContainer extends React.Component {
     }
 
     render(){
-        const { logout } = this.props;
+        const { currentUser, logout } = this.props;
 
         return(
             <div>
@@ -30,18 +31,8 @@ export default class ProfileButtonContainer extends React.Component {
                     <ul id="user-dropdown" className="user-dropdown">
                         <li>
                             <ul className="editions">
-                                <span className="dropdown-subtitle">Edition</span>
+                                <span className="dropdown-subtitle">{currentUser.username}</span>
                                 <li><button onClick={logout}><i className="fas fa-sign-out-alt"></i></button></li>
-                                <li><a href="#">HTML</a></li>
-                                <li><a href="#">Javascript</a></li>
-                                <li><a href="#">Ruby</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span className="dropdown-subtitle">Help</span>
-                            <ul className="help">
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Contact Us</a></li>
                             </ul>
                         </li>
                     </ul>
