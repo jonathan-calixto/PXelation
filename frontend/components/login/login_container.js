@@ -6,11 +6,9 @@ const mSTP = ({ session, entities: { users }}) => ({
     currentUser: users[session.id]
 });
 
-const mDTP = dispatch => {
-    debugger
-    return ({logout: () => dispatch(logout()),
+const mDTP = dispatch => ({
+    logout: () => dispatch(logout()),
     clearErrors: () => dispatch(clearErrors())
-    });
-};
+});
 
 export default connect(mSTP, mDTP)(Login);

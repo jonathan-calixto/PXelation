@@ -7,11 +7,12 @@ class Api::Controller < ApplicationController
         render = 'api/photos/index'
     end
 
-    def create
+    def show
         @photo = Photo.find(params[:id])
+        render 'api/photos/show'
     end
 
-    def show
+    def create
         @photo = Photo.new(photo_params)
         if @photo.save && @photo.photographer_id == current_user.id
             render 'api/photos/show'
@@ -40,7 +41,7 @@ class Api::Controller < ApplicationController
     private
 
     def photo_params
-        params.require(:photo).permit(:title, :description, :location, :photographer_id, :photograph)
+        params.require(:photo).permit(:title, :description, :location, :photographer_id, :photo)
     end
 
 end

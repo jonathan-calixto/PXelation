@@ -13,11 +13,17 @@ export default class Login extends React.Component {
     }
 
     handleBlur(e) {
-        this.setState({ show: false });
+        e.stopPropagation();
+        this.setState({ show: false }, () => {
+            document.removeEventListener('click', this.handleBlur);
+        });
     }
 
-    handleClick() {
-        this.setState({ show: !this.state.show });
+    handleClick(e) {
+        e.stopPropagation();
+        this.setState({ show: !this.state.show }, () => {
+            document.addEventListener('click', this.handleBlur);
+        });
     }
 
     render(){
@@ -48,7 +54,7 @@ export default class Login extends React.Component {
                             <li>
                                 <ul className="editions">
                                     <span className="dropdown-subtitle">{currentUser.username}</span>
-                                    <li><button onClick={logout}><i className="fas fa-sign-out-alt"></i></button></li>
+                                    <li><button onClick={logout}><i className="fas fa-sign-out-alt"></i> Log Out</button></li>
                                 </ul>
                             </li>
                         </ul>
