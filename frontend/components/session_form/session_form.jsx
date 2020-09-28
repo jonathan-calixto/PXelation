@@ -61,7 +61,7 @@ export default class SessionForm extends React.Component {
                         <button onClick={this.demoUser}>Demo User</button>
                         <br/><br/>
                         <div className='p-spacer-div'><p>_______________________   or   _______________________</p></div>
-                        <br/><br/>
+                        <br/>
                         <span>{this.renderErrors()}</span>
                         <br/>
                             <label>
