@@ -6,6 +6,12 @@
 #               api_session GET    /api/session(.:format)                                                                   api/sessions#show {:format=>:json}
 #                           DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
+#                api_photos GET    /api/photos(.:format)                                                                    api/photos#index {:format=>:json}
+#                           POST   /api/photos(.:format)                                                                    api/photos#create {:format=>:json}
+#                 api_photo GET    /api/photos/:id(.:format)                                                                api/photos#show {:format=>:json}
+#                           PATCH  /api/photos/:id(.:format)                                                                api/photos#update {:format=>:json}
+#                           PUT    /api/photos/:id(.:format)                                                                api/photos#update {:format=>:json}
+#                           DELETE /api/photos/:id(.:format)                                                                api/photos#destroy {:format=>:json}
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
