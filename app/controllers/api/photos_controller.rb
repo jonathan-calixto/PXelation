@@ -31,10 +31,10 @@ class Api::PhotosController < ApplicationController
     end
 
     def destroy
-        @photo = Post.fin(params[:id])
+        @photo = Photo.find(params[:id])
         if @photo.photographer_id == current_user.id
             @photo.destroy
-            render 'api/posts/show'
+            render 'api/photos/show'
         end
     end
 

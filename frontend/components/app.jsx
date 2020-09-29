@@ -21,7 +21,7 @@ const App = () => (
         
             <Switch>
                 <Route exact path="/" component={SplashPageContainer} />
-                <Route exact path='/photos' component={PhotoIndexContainer}/>
+                <ProtectedRoute exact path='/photos' component={PhotoIndexContainer}/>
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <ProtectedRoute path="/photos/upload" component={PhotoUploadContainer} />

@@ -12,7 +12,7 @@ export default class PhotoIndex extends React.Component {
 
         return (
             <div>
-                <ul>
+                <ul className='photo-profile-div'>
                     {photos.map(photo => {
                         return <PhotoIndexItem 
                                 photo={photo}
@@ -21,7 +21,7 @@ export default class PhotoIndex extends React.Component {
                         />
                     })}
                 </ul>
-                <Link to='/photos/upload'>Upload Photo</Link>
+                <Link to='/photos/upload'>Upload a New Photo</Link>
             </div>
         )
     }

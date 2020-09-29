@@ -55,6 +55,7 @@ export default class Login extends React.Component {
                             <li>
                                 <ul className="editions">
                                     <span className="dropdown-subtitle">{currentUser.username}</span>
+                                    <li><Link to='/photos/'>Profile</Link></li>
                                     <li><button onClick={logout}><i className="fas fa-sign-out-alt"></i> Log Out</button></li>
                                 </ul>
                             </li>

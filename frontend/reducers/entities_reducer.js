@@ -8,4 +8,3 @@ export const entitiesReducer = combineReducers({
     photos: PhotosReducer
 });
 
-// export default entitiesReducer;
