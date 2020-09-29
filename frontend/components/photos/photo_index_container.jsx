@@ -3,7 +3,7 @@ import PhotoIndex from './photo_index';
 import { fetchPhotos, deletePhoto} from '../../actions/photo_actions';
 
 const mSTP = state => ({
-    photos: Object.values(state.photos)
+    photos: Object.values(state.entities.photos)
 });
 
 const mDTP = dispatch => ({

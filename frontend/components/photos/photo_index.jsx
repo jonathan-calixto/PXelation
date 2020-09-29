@@ -8,12 +8,12 @@ export default class PhotoIndex extends React.Component {
     }
 
     render() {
-        const { phtoos, deletePhoto } = this.props;
+        const { photos, deletePhoto } = this.props;
 
         return (
             <div>
                 <ul>
-                    {phtoos.map(photo => {
+                    {photos.map(photo => {
                         return <PhotoIndexItem 
                                 photo={photo}
                                 deletePhoto={deletePhoto}

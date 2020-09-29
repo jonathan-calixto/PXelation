@@ -47,6 +47,7 @@ export default class PhotoUpload extends React.Component {
                     <div className='inner-form-div'>
                         <div className='image-preview-div'>
                             <h3>Image Preview</h3>
+                            
                             {preview}
                         </div>
                         <div className='image-details-div'>
