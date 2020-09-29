@@ -3,7 +3,7 @@ import {RECEIVE_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO} from '../actions/photo_acti
 const PhotosReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
-
+    debugger
     switch (action.type) {
         case RECEIVE_PHOTOS:
             return action.photos;

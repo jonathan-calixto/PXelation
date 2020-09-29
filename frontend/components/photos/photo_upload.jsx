@@ -10,10 +10,10 @@ export default class PhotoUpload extends React.Component {
     }
 
     handleFile(event){
-        const file = event.currentTarget.files[0];
+        const file = event.target.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.setState({ photoFile: event.currentTarget.files[0] });
+            this.setState({ photoFile: file, photoUrl: fileReader.result });
         };
         if (file) {
             fileReader.readAsDataURL(file);

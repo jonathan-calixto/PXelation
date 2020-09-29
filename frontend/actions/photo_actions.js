@@ -4,18 +4,21 @@ export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 
-const receivePhotos = photos => ({
-    type: RECEIVE_PHOTOS,
-    photos
-});
-const receivePhoto = photo => ({
-    type: RECEIVE_PHOTO,
-    photo
-});
-const removePhoto = photoId => ({
-    type: REMOVE_PHOTO,
-    photoId
-});
+const receivePhotos = photos => {
+    debugger
+    return {type: RECEIVE_PHOTOS,
+    photos};
+};
+const receivePhoto = photo => {
+    debugger
+    return {type: RECEIVE_PHOTO,
+    photo};
+};
+const removePhoto = photoId => {
+    debugger
+    return {type: REMOVE_PHOTO,
+    photoId};
+};
 
 export const fetchPhotos = () => dispatch => (
     PhotoAPIUtils.fetchPhotos().

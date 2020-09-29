@@ -86,6 +86,91 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/photo_actions.js":
+/*!*******************************************!*\
+  !*** ./frontend/actions/photo_actions.js ***!
+  \*******************************************/
+/*! exports provided: RECEIVE_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, fetchPhotos, fetchPhoto, createPhoto, updatePhoto, deletePhoto */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PHOTOS", function() { return RECEIVE_PHOTOS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PHOTO", function() { return RECEIVE_PHOTO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_PHOTO", function() { return REMOVE_PHOTO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPhotos", function() { return fetchPhotos; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPhoto", function() { return fetchPhoto; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPhoto", function() { return createPhoto; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePhoto", function() { return updatePhoto; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePhoto", function() { return deletePhoto; });
+/* harmony import */ var _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/photo_api_util */ "./frontend/util/photo_api_util.js");
+
+var RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
+var RECEIVE_PHOTO = 'RECEIVE_PHOTO';
+var REMOVE_PHOTO = 'REMOVE_PHOTO';
+
+var receivePhotos = function receivePhotos(photos) {
+  debugger;
+  return {
+    type: RECEIVE_PHOTOS,
+    photos: photos
+  };
+};
+
+var receivePhoto = function receivePhoto(photo) {
+  debugger;
+  return {
+    type: RECEIVE_PHOTO,
+    photo: photo
+  };
+};
+
+var removePhoto = function removePhoto(photoId) {
+  debugger;
+  return {
+    type: REMOVE_PHOTO,
+    photoId: photoId
+  };
+};
+
+var fetchPhotos = function fetchPhotos() {
+  return function (dispatch) {
+    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPhotos"]().then(function (photos) {
+      return dispatch(receivePhotos(photos));
+    });
+  };
+};
+var fetchPhoto = function fetchPhoto(photoId) {
+  return function (dispatch) {
+    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPhoto"](photoId).then(function (photo) {
+      return dispatch(receivePhoto(photo));
+    });
+  };
+};
+var createPhoto = function createPhoto(photo) {
+  return function (dispatch) {
+    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["createPhoto"](photo).then(function (photo) {
+      return dispatch(receivePhoto(photo));
+    });
+  };
+};
+var updatePhoto = function updatePhoto(photo) {
+  return function (dispatch) {
+    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["updatePhoto"](photo).then(function (photo) {
+      return dispatch(receivePhotos(photo));
+    });
+  };
+};
+var deletePhoto = function deletePhoto(photoId) {
+  return function (dispatch) {
+    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["deletePhoto"](photoId).then(function (photoId) {
+      return dispatch(removePhoto(photoId));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -710,12 +795,13 @@ var PhotoUpload = /*#__PURE__*/function (_React$Component) {
     value: function handleFile(event) {
       var _this2 = this;
 
-      var file = event.currentTarget.files[0];
+      var file = event.target.files[0];
       var fileReader = new FileReader();
 
       fileReader.onloadend = function () {
         _this2.setState({
-          photoFile: event.currentTarget.files[0]
+          photoFile: file,
+          photoUrl: fileReader.result
         });
       };
 
@@ -796,21 +882,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _util_photo_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/photo_api_util */ "./frontend/util/photo_api_util.js");
+/* harmony import */ var _actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/photo_actions */ "./frontend/actions/photo_actions.js");
 /* harmony import */ var _photo_upload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./photo_upload */ "./frontend/components/photos/photo_upload.jsx");
 
 
 
 
 
-var mSTP = function mSTP(_ref) {
-  var session = _ref.session;
+var mSTP = function mSTP(state) {
   return {
     photo: {
       title: '',
       description: '',
       location: '',
-      photographer_id: session.id,
+      photographer_id: state.session.id,
       photoFile: null,
       photoUrl: null
     },
@@ -821,7 +906,7 @@ var mSTP = function mSTP(_ref) {
 var mDTP = function mDTP(dispatch) {
   return {
     createPhoto: function createPhoto(photo) {
-      return dispatch(Object(_util_photo_api_util__WEBPACK_IMPORTED_MODULE_2__["createPhoto"])(photo));
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__["createPhoto"])(photo));
     }
   };
 };
@@ -1505,9 +1590,7 @@ var createPhoto = function createPhoto(photo) {
   return $.ajax({
     method: 'post',
     url: 'api/photos',
-    data: {
-      photo: photo
-    },
+    data: photo,
     contentType: false,
     processData: false
   });

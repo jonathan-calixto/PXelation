@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createPhoto } from '../../util/photo_api_util';
+import { createPhoto } from '../../actions/photo_actions';
 import PhotoUpload from './photo_upload';
 
 
-const mSTP = ({ session }) => ({
+const mSTP = state => ({
     photo: {
         title: '',
         description: '',
         location: '',
-        photographer_id: session.id,
+        photographer_id: state.session.id,
         photoFile: null,
         photoUrl: null
     },

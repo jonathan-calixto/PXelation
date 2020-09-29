@@ -1,4 +1,4 @@
-class Api::Controller < ApplicationController 
+class Api::PhotosController < ApplicationController 
 
     before_action :ensure_logged_in, only: [:create, :update, :destroy]
 
@@ -13,6 +13,7 @@ class Api::Controller < ApplicationController
     end
 
     def create
+        debugger
         @photo = Photo.new(photo_params)
         if @photo.save && @photo.photographer_id == current_user.id
             render 'api/photos/show'
