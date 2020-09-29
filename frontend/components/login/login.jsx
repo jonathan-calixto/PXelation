@@ -14,6 +14,7 @@ export default class Login extends React.Component {
 
     handleBlur(e) {
         e.stopPropagation();
+        this.state.logout();
         this.setState({ show: false }, () => {
             document.removeEventListener('click', this.handleBlur);
         });

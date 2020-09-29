@@ -39,42 +39,53 @@ export default class PhotoUpload extends React.Component {
         console.log(this.state);
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
-            <div>
+            <div className='outer-form-div'>
+                <div className='form-title'>
+                    <h2>Upload</h2>
+                </div>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <h3>Image Preview</h3>
-                        {preview}
-                        <br/>
-                        <label>Title:
-                            <br/>
-                            <input type="text"
-                                    value={this.state.title}
-                                    onChange={this.update('title')}
-                            />
-                        </label>
-                        <br/>
-                        <label>Location:
-                            <br/>
-                            <input type="text"
-                                    value={this.state.location}
-                                    onChange={this.update('location')}
-                            />
-                        </label>
-                        <br/>
-                        <label>Description:
-                            <br/>
-                            <textarea name="something" id="" cols="5" rows="5"
-                                        value={this.state.description}
-                                        onChange={this.update('description')}
-                            ></textarea>
-                        </label>
-                        <br/>
-                        <label>Choose Photograph:
-                            <br/>
-                            <input type="file" onChange={this.handleFile}/>
-                        </label>
-                        <br/>
-                        <button type='submit'>Upload New Photo</button>
+                    <div className='inner-form-div'>
+                        <div className='image-preview-div'>
+                            <h3>Image Preview</h3>
+                            {preview}
+                        </div>
+                        <div className='image-details-div'>
+                            <div className='centering-div'>
+                                <label className='upload-labels'>Title:
+                                    <br/>
+                                    <input type="text"
+                                            value={this.state.title}
+                                            onChange={this.update('title')}
+                                            required
+                                    />
+                                </label>
+                                <br/><br/>
+                                <label className='upload-labels'>Location:
+                                    <br/>
+                                    <input type="text"
+                                            value={this.state.location}
+                                            onChange={this.update('location')}
+                                            placeholder='Enter Location'
+                                    />
+                                </label>
+                                <br/><br/>
+                                <label className='upload-labels'>Description:
+                                    <br/>
+                                    <textarea cols="40" rows="3"
+                                                value={this.state.description}
+                                                onChange={this.update('description')}
+                                                placeholder='e.g. Low angle view of young man surfing in the ocean with a clear blue sky'
+                                    ></textarea>
+                                </label>
+                                <br/><br/>
+                                <label className='upload-labels'>Choose Photograph:
+                                    <br/>
+                                    <input type="file" onChange={this.handleFile}/>
+                                </label>
+                                <br/><br/>
+                                <button className='upload-button' type='submit'>Upload New Photo</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
