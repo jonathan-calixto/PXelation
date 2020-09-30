@@ -3,28 +3,41 @@ import {Link} from 'react-router-dom';
 
 export default class PhotoShow extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.openFullscreen = this.openFullscreen.bind(this);
+    }
+
     componentDidMount() {
         this.props.fetchPhoto(this.props.match.params.photoId);
     }
 
-    // componentDidUpdate() {
-    //     if (!photo) {
-    //         this.props.fetchPhoto(this.props.match.params.photoId);
-    //     }
-    // }
+    openFullscreen(){
+        var elem = document.getElementById('fullscreen-image');
+        if(elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+        }
+    }
 
 
     render() {
         const { photo } = this.props;
         // const fullPhoto = photo.photoUrl ? <img src={photo.photoUrl} /> : null
-        // if (!photo) {
-        //     return null;
-        // }
+        if (!photo) {
+            return null;
+        }
         return (
             <div>
                 <div className='grey-black-bgr'>
-                    <div className='image-container-div'>
-                        <img src={photo.photoUrl} />
+                    <div className='image-container-div' id='fullscreen-image'>
+                        <div className='image-icon-div'>
+                            <Link to='/photos/'><i className="fas fa-arrow-left"></i></Link>
+                            <button className='fullscreen' onClick={this.openFullscreen}><i className="fas fa-expand-alt"></i></button>
+                        </div>
+                        
+                        <img className='img-tag' src={photo.photoUrl} />
                     </div>
                 </div>
 
@@ -39,14 +52,14 @@ export default class PhotoShow extends React.Component {
 
                             <div className='title-user-div'>
                                 <h1>{photo.title}</h1>
-                                <p>by</p>
+                                <p>by (need to add user to props)</p>
                             </div> 
                         </div>
 
-                        <div>
+                        <div className='location-div'>
                             <p><i className="fas fa-map-marker-alt"></i> {photo.location}</p>
                         </div>
-                        <div>
+                        <div className='description-div'>
                             <p>{photo.description}</p>
                         </div>
                     </div>

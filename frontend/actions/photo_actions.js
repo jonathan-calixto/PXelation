@@ -18,22 +18,22 @@ const removePhoto = photoId => ({
 });
 
 export const fetchPhotos = () => dispatch => (
-    PhotoAPIUtils.fetchPhotos().
-        then(photos => dispatch(receivePhotos(photos)))
+    PhotoAPIUtils.fetchPhotos()
+        .then(photos => dispatch(receivePhotos(photos)))
 );
 export const fetchPhoto = (photoId) => dispatch => (
-    PhotoAPIUtils.fetchPhoto(photoId).
-        then(photo => dispatch(receivePhoto(photo)))
+    PhotoAPIUtils.fetchPhoto(photoId)
+        .then(photo => dispatch(receivePhoto(photo)))
 );
 export const createPhoto = (photo) => dispatch => (
-    PhotoAPIUtils.createPhoto(photo).
-        then(photo => dispatch(receivePhoto(photo)))
+    PhotoAPIUtils.createPhoto(photo)
+        .then(photo => dispatch(receivePhoto(photo)))
 );
 export const updatePhoto = (photo) => dispatch => (
-    PhotoAPIUtils.updatePhoto(photo).
-        then(photo => dispatch(receivePhotos(photo)))
+    PhotoAPIUtils.updatePhoto(photo)
+        .then(photo => dispatch(receivePhotos(photo)))
 );
 export const deletePhoto = (photoId) => dispatch => (
-    PhotoAPIUtils.deletePhoto(photoId).
-        then(photoId => dispatch(removePhoto(photoId)))
+    PhotoAPIUtils.deletePhoto(photoId)
+        .then(photoId => dispatch(removePhoto(photoId)))
 );

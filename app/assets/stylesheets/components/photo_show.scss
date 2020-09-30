@@ -6,7 +6,15 @@
     .image-container-div {
         width: 75%;
         height: 75%;
-        margin: 200px 0;
+        margin-bottom: 200px;
+
+        .image-icon-div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 182px;
+            font-size: 24px;
+            color: white;
+        }
     }
 }
 
@@ -29,7 +37,7 @@
             font-size: 24px;
 
             i {
-                margin: 25px;
+                margin: 15px;
 
                 &:hover {
                     cursor: pointer;
@@ -52,6 +60,18 @@
                     margin-top: 15px;
                     font-weight: bolder;
                 }
+            }
+
+        }
+
+        .location-div {
+            margin: 15px
+        }
+
+        .description-div {
+            p {
+                width: 880px;
+                margin: 10px 25px;
             }
 
         }

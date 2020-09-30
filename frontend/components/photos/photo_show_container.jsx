@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = dispatch => ({
-    fetchPhoto: photoId => dispatch(fetchPhoto)
+    fetchPhoto: photoId => dispatch(fetchPhoto(photoId))
 });
 
 export default connect(mSTP, mDTP)(PhotoShow);

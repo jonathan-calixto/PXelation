@@ -22,11 +22,11 @@ const App = () => (
         
             <Switch>
                 <Route exact path="/" component={SplashPageContainer} />
-                <Route exact path="/photos/:photoId" component={PhotoShowContainer}/>
-                <ProtectedRoute exact path='/photos' component={PhotoIndexContainer}/>
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <ProtectedRoute exact path='/photos' component={PhotoIndexContainer}/>
                 <ProtectedRoute exact path="/photos/upload" component={PhotoUploadContainer} />
+                <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer}/>
             </Switch>
     </div>
 );
