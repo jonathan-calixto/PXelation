@@ -9,22 +9,26 @@ export default class PhotoEdit extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchPhoto(this.state.id);
     }
 
     handleSubmit(event){
         event.preventDefault();
-        const formData = new FormData();
-        formData.append('photo[title]', this.state.title);
-        formData.append('photo[description]', this.state.description);
-        formData.append('photo[location]', this.state.location);
+        // debugger
+        // const formData = new FormData();
+        // formData.append('photo[title]', this.state.title);
+        // formData.append('photo[description]', this.state.description);
+        // formData.append('photo[location]', this.state.location);
+        let editPhoto = {title: this.state.title, description: this.state.description, location: this.state.location, id: this.state.id};
         // formData.append('photo[photographer_id]', this.state.photographer_id);
         // formData.append('photo[photo]', this.state.photoFile);
         // this.props.createPhoto(formData);
-        this.props.updatePhoto(formData);
+        this.props.updatePhoto(editPhoto);
     }
 
     handleFile(event) {
+        // debugger
         const file = event.target.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -84,17 +88,17 @@ export default class PhotoEdit extends React.Component {
                                     ></textarea>
                                 </label>
                                 <br /><br />
-                                <label className='upload-labels'>Choose Photograph:
+                                {/* <label className='upload-labels'>Choose Photograph:
                                     <br />
                                     <input type="file" onChange={this.handleFile} />
-                                </label>
+                                </label> */}
                                 <br /><br />
                                 <button className='upload-button' type='submit'>Save Changes</button>
+                                <button onClick={deletePhoto} className='upload-button' type='submit'>Delete Photo</button>
                             </div>
                         </div>
                     </div>
                 </form>
-                                <button onClick={deletePhoto} className='upload-button' type='submit'>Delete Photo</button>
             </div>
         );
     }

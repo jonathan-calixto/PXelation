@@ -22,9 +22,9 @@ class Api::PhotosController < ApplicationController
     end
 
     def update
-        @photo = Photo.find(params[:id])
         debugger
-        if @photo.photographer_id == current_user.id && @photo.update(new_params)
+        @photo = Photo.find(params[:id])
+        if @photo.photographer_id == current_user.id && @photo.update(photo_params)
             render 'api/photos/show'
         else
             render json: @photo.errors.full_messages, status: 422

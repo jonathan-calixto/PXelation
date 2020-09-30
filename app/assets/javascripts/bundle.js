@@ -853,26 +853,35 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
   _createClass(PhotoEdit, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      // debugger
       this.props.fetchPhoto(this.state.id);
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(event) {
-      event.preventDefault();
-      var formData = new FormData();
-      formData.append('photo[title]', this.state.title);
-      formData.append('photo[description]', this.state.description);
-      formData.append('photo[location]', this.state.location); // formData.append('photo[photographer_id]', this.state.photographer_id);
+      event.preventDefault(); // debugger
+      // const formData = new FormData();
+      // formData.append('photo[title]', this.state.title);
+      // formData.append('photo[description]', this.state.description);
+      // formData.append('photo[location]', this.state.location);
+
+      var editPhoto = {
+        title: this.state.title,
+        description: this.state.description,
+        location: this.state.location,
+        id: this.state.id
+      }; // formData.append('photo[photographer_id]', this.state.photographer_id);
       // formData.append('photo[photo]', this.state.photoFile);
       // this.props.createPhoto(formData);
 
-      this.props.updatePhoto(formData);
+      this.props.updatePhoto(editPhoto);
     }
   }, {
     key: "handleFile",
     value: function handleFile(event) {
       var _this2 = this;
 
+      // debugger
       var file = event.target.files[0];
       var fileReader = new FileReader();
 
@@ -940,19 +949,14 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
         value: this.state.description,
         onChange: this.update('description'),
         placeholder: "e.g. Low angle view of young man surfing in the ocean with a clear blue sky"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "upload-labels"
-      }, "Choose Photograph:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "file",
-        onChange: this.handleFile
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "upload-button",
         type: "submit"
-      }, "Save Changes"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Save Changes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: deletePhoto,
         className: "upload-button",
         type: "submit"
-      }, "Delete Photo"));
+      }, "Delete Photo"))))));
     }
   }]);
 
@@ -2236,7 +2240,11 @@ var updatePhoto = function updatePhoto(photo) {
   return $.ajax({
     method: 'patch',
     url: "api/photos/".concat(photo.id),
-    data: photo
+    data: {
+      photo: photo
+    } // contentType: false,
+    // processData: false
+
   });
 };
 var deletePhoto = function deletePhoto(photoId) {
