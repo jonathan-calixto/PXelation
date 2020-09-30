@@ -3,11 +3,12 @@ import {RECEIVE_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO} from '../actions/photo_acti
 const PhotosReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
+
     switch (action.type) {
         case RECEIVE_PHOTOS:
             return action.photos;
         case RECEIVE_PHOTO:
-            return Object.assign({}, state, {[action.photo.id]: action.photo});
+            return {[action.photo.id]: action.photo};
         case RECEIVE_PHOTOS:
             delete newState[action.reportId];
             return newState;

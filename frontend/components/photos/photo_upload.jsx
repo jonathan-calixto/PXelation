@@ -25,7 +25,7 @@ export default class PhotoUpload extends React.Component {
     }
 
     handleSubmit(event){
-        event.preventDefault();
+        // event.preventDefault(); // do i keep this???
         const formData = new FormData();
         formData.append('photo[title]', this.state.title);
         formData.append('photo[description]', this.state.description);

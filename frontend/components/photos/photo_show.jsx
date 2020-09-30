@@ -65,10 +65,12 @@ export default class PhotoShow extends React.Component {
                     </div>
 
                     <div className='comments-container-div'>
-                        <h1>Comments</h1>
-                        <form>
-                            <label><Link to='/photos/'><i className="fas fa-user-circle"></i></Link><input type="text" placeholder='Add a comment'/></label>
-                        </form>
+                        <div className='comment-padding-div'>
+                            <h1>Comments</h1>
+                            <form>
+                                <label><Link to='/photos/'><i className="fas fa-user-circle"></i></Link><textarea type="text" placeholder='Add a comment'/></label>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

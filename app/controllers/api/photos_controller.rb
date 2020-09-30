@@ -22,8 +22,9 @@ class Api::PhotosController < ApplicationController
     end
 
     def update
-        @photo = Photo.find(params[:photo][:id])
-        if @photo.update(photo_params) && @photo.photographer_id == current_user.id
+        @photo = Photo.find(params[:id])
+        debugger
+        if @photo.photographer_id == current_user.id && @photo.update(new_params)
             render 'api/photos/show'
         else
             render json: @photo.errors.full_messages, status: 422
@@ -42,6 +43,10 @@ class Api::PhotosController < ApplicationController
 
     def photo_params
         params.require(:photo).permit(:title, :description, :location, :photographer_id, :photo)
+    end
+
+    def new_params
+        params.require(:photo).permit(:title, :description, :location, :photographer_id)
     end
 
 end

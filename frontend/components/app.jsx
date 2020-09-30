@@ -9,6 +9,7 @@ import SplashPageContainer from './splash/splash_container';
 import PhotoUploadContainer from './photos/photo_upload_container';
 import PhotoIndexContainer from './photos/photo_index_container';
 import PhotoShowContainer from './photos/photo_show_container';
+import EditPhotoContainer from './photos/edit_photo_container';
 
 
 const App = () => (
@@ -21,12 +22,13 @@ const App = () => (
             </header>
         
             <Switch>
-                <Route exact path="/" component={SplashPageContainer} />
-                <AuthRoute exact path="/login" component={LoginFormContainer} />
-                <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <Route exact path="/" component={SplashPageContainer}/>
+                <AuthRoute exact path="/login" component={LoginFormContainer}/>
+                <AuthRoute exact path="/signup" component={SignupFormContainer}/>
                 <ProtectedRoute exact path='/photos' component={PhotoIndexContainer}/>
-                <ProtectedRoute exact path="/photos/upload" component={PhotoUploadContainer} />
+                <ProtectedRoute exact path="/photos/upload" component={PhotoUploadContainer}/>
                 <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer}/>
+                <ProtectedRoute exact path='/photos/:photoId/edit' component={EditPhotoContainer}/>
             </Switch>
     </div>
 );

@@ -265,6 +265,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _photos_photo_upload_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./photos/photo_upload_container */ "./frontend/components/photos/photo_upload_container.jsx");
 /* harmony import */ var _photos_photo_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./photos/photo_index_container */ "./frontend/components/photos/photo_index_container.jsx");
 /* harmony import */ var _photos_photo_show_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./photos/photo_show_container */ "./frontend/components/photos/photo_show_container.jsx");
+/* harmony import */ var _photos_edit_photo_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./photos/edit_photo_container */ "./frontend/components/photos/edit_photo_container.jsx");
+
 
 
 
@@ -308,6 +310,10 @@ var App = function App() {
     exact: true,
     path: "/photos/:photoId",
     component: _photos_photo_show_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
+    exact: true,
+    path: "/photos/:photoId/edit",
+    component: _photos_edit_photo_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   })));
 };
 
@@ -748,6 +754,215 @@ var menuItems = [{
 
 /***/ }),
 
+/***/ "./frontend/components/photos/edit_photo_container.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/photos/edit_photo_container.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/photo_actions */ "./frontend/actions/photo_actions.js");
+/* harmony import */ var _photo_edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photo_edit */ "./frontend/components/photos/photo_edit.jsx");
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  var photo = state.entities.photos[ownProps.match.params.photoId];
+  return {
+    photo: photo
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchPhoto: function fetchPhoto(photoId) {
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPhoto"])(photoId));
+    },
+    updatePhoto: function updatePhoto(photo) {
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__["updatePhoto"])(photo));
+    },
+    deletePhoto: function deletePhoto(photoId) {
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__["deletePhoto"])(photoId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_photo_edit__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/photos/photo_edit.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/photos/photo_edit.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PhotoEdit; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var PhotoEdit = /*#__PURE__*/function (_React$Component) {
+  _inherits(PhotoEdit, _React$Component);
+
+  var _super = _createSuper(PhotoEdit);
+
+  function PhotoEdit(props) {
+    var _this;
+
+    _classCallCheck(this, PhotoEdit);
+
+    _this = _super.call(this, props);
+    _this.state = props.photo; // debugger
+
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(PhotoEdit, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchPhoto(this.state.id);
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var formData = new FormData();
+      formData.append('photo[title]', this.state.title);
+      formData.append('photo[description]', this.state.description);
+      formData.append('photo[location]', this.state.location); // formData.append('photo[photographer_id]', this.state.photographer_id);
+      // formData.append('photo[photo]', this.state.photoFile);
+      // this.props.createPhoto(formData);
+
+      this.props.updatePhoto(formData);
+    }
+  }, {
+    key: "handleFile",
+    value: function handleFile(event) {
+      var _this2 = this;
+
+      var file = event.target.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function () {
+        _this2.setState({
+          photoFile: file,
+          photoUrl: fileReader.result
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this3 = this;
+
+      return function (event) {
+        return _this3.setState(_defineProperty({}, field, event.currentTarget.value));
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log(this.state);
+      var preview = this.state.photoUrl ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.state.photoUrl
+      }) : null;
+      var deletePhoto = this.props.deletePhoto;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "outer-form-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-title"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Edit Photo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-form-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image-preview-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Image Preview"), preview), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image-details-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "centering-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "upload-labels"
+      }, "Title:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.title,
+        onChange: this.update('title'),
+        required: true
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "upload-labels"
+      }, "Location:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.location,
+        onChange: this.update('location'),
+        placeholder: "Enter Location"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "upload-labels"
+      }, "Description:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        cols: "40",
+        rows: "3",
+        value: this.state.description,
+        onChange: this.update('description'),
+        placeholder: "e.g. Low angle view of young man surfing in the ocean with a clear blue sky"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "upload-labels"
+      }, "Choose Photograph:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        onChange: this.handleFile
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "upload-button",
+        type: "submit"
+      }, "Save Changes"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: deletePhoto,
+        className: "upload-button",
+        type: "submit"
+      }, "Delete Photo"));
+    }
+  }]);
+
+  return PhotoEdit;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+
+/***/ }),
+
 /***/ "./frontend/components/photos/photo_index.jsx":
 /*!****************************************************!*\
   !*** ./frontend/components/photos/photo_index.jsx ***!
@@ -1031,14 +1246,16 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
         className: "description-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, photo.description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-container-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-padding-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Comments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/photos/"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-user-circle"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         type: "text",
         placeholder: "Add a comment"
-      }))))));
+      })))))));
     }
   }]);
 
@@ -1069,6 +1286,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  debugger;
   return {
     photo: state.entities.photos[ownProps.match.params.photoId]
   };
@@ -1172,7 +1390,7 @@ var PhotoUpload = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(event) {
-      event.preventDefault();
+      // event.preventDefault(); // do i keep this???
       var formData = new FormData();
       formData.append('photo[title]', this.state.title);
       formData.append('photo[description]', this.state.description);
@@ -1808,7 +2026,7 @@ var PhotosReducer = function PhotosReducer() {
       return action.photos;
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PHOTO"]:
-      return Object.assign({}, state, _defineProperty({}, action.photo.id, action.photo));
+      return _defineProperty({}, action.photo.id, action.photo);
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PHOTOS"]:
       delete newState[action.reportId];
@@ -2017,7 +2235,8 @@ var createPhoto = function createPhoto(photo) {
 var updatePhoto = function updatePhoto(photo) {
   return $.ajax({
     method: 'patch',
-    url: "api/photos/".concat(photo.id)
+    url: "api/photos/".concat(photo.id),
+    data: photo
   });
 };
 var deletePhoto = function deletePhoto(photoId) {
