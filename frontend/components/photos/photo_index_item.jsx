@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const PhotoIndexItem = props => {
     // const preview = props.photo.photoUrl ? <img src={props.photo.photoUrl} /> : null;
-    debugger
     return(
         <li>
             <div className='photo-preview-index'>
