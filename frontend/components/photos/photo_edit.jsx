@@ -12,7 +12,7 @@ export default class PhotoEdit extends React.Component {
     }
 
     handleSubmit(event){
-        // event.preventDefault();
+        event.preventDefault();
         let editPhoto = { title: this.state.title, description: this.state.description, location: this.state.location, id: this.state.id };
         this.props.updatePhoto(editPhoto);
 

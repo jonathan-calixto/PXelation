@@ -2,8 +2,33 @@
 //     display: flex;
 // }
 
-.photo-preview-index {
-    height: 50%;
-    width: 50%;
-
+.photo-container-div {
+    display: flex;
 }
+
+.photo-index-masonry {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+}
+
+.masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+.lli-container {
+    min-height: fit-content;
+    // width: 300px;
+    height: fit-content;
+    margin: 5px 2.5px;
+    list-style: none;
+}
+// .photo-preview-index {
+//     height: fit-content;
+//     width: fit-content;
+//     border: solid 2px blue;
+
+// }

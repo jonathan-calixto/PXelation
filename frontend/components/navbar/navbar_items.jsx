@@ -1,7 +1,7 @@
 export const menuItems = [
     {
         title: "Discover",
-        url: '/',
+        url: '/#/photos/',
         className: 'nav-links'
     },
     {
