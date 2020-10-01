@@ -748,7 +748,7 @@ var menuItems = [{
   className: 'nav-links'
 }, {
   title: "About Me",
-  url: '/',
+  url: 'https://www.linkedin.com/in/calixtojonathan/',
   className: 'nav-links'
 }];
 
@@ -1029,7 +1029,7 @@ var PhotoIndex = /*#__PURE__*/function (_React$Component) {
     value: function shufflePhotos(photos) {
       photos.sort(function () {
         return Math.random() - 0.5;
-      });
+      }); // no idea if this will work, doesn't at the moment, will be used to dynamically shuffle the index photos
     }
   }, {
     key: "render",
@@ -1961,9 +1961,6 @@ document.addEventListener("DOMContentLoaded", function () {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   }
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchPhoto = _actions_photo_actions__WEBPACK_IMPORTED_MODULE_4__["fetchPhoto"];
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store

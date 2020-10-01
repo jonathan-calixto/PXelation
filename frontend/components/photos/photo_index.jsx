@@ -14,7 +14,7 @@ export default class PhotoIndex extends React.Component {
     }
 
     shufflePhotos(photos){
-        photos.sort(() => Math.random() - 0.5);
+        photos.sort(() => Math.random() - 0.5); // no idea if this will work, doesn't at the moment, will be used to dynamically shuffle the index photos
     }
 
     render() {

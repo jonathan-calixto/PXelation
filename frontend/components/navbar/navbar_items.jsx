@@ -21,7 +21,7 @@ export const menuItems = [
     },
     {
         title: "About Me",
-        url: '/',
+        url: 'https://www.linkedin.com/in/calixtojonathan/',
         className: 'nav-links'
     },
 ];
