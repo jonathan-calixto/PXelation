@@ -24,10 +24,11 @@ export default class PhotoShow extends React.Component {
 
     render() {
         const { photo } = this.props;
-        // const fullPhoto = photo.photoUrl ? <img src={photo.photoUrl} /> : null
+
         if (!photo) {
             return null;
         }
+        
         return (
             <div>
                 <div className='grey-black-bgr'>

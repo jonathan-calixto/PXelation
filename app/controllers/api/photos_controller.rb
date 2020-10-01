@@ -3,12 +3,12 @@ class Api::PhotosController < ApplicationController
     before_action :ensure_logged_in, only: [:create, :update, :destroy]
 
     def index
-        @photos = Photo.all
+        @photos = Photo.with_attached_photo.all
         render = 'api/photos/index'
     end
 
     def show
-        @photo = Photo.find(params[:id])
+        @photo = Photo.with_attached_photo.find(params[:id])
         render 'api/photos/show'
     end
 
@@ -22,7 +22,6 @@ class Api::PhotosController < ApplicationController
     end
 
     def update
-        debugger
         @photo = Photo.find(params[:id])
         if @photo.photographer_id == current_user.id && @photo.update(photo_params)
             render 'api/photos/show'
@@ -44,9 +43,4 @@ class Api::PhotosController < ApplicationController
     def photo_params
         params.require(:photo).permit(:title, :description, :location, :photographer_id, :photo)
     end
-
-    def new_params
-        params.require(:photo).permit(:title, :description, :location, :photographer_id)
-    end
-
 end

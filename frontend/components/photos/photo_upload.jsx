@@ -4,7 +4,6 @@ export default class PhotoUpload extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.photo;
-
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -26,6 +25,7 @@ export default class PhotoUpload extends React.Component {
 
     handleSubmit(event){
         // event.preventDefault(); // do i keep this???
+
         const formData = new FormData();
         formData.append('photo[title]', this.state.title);
         formData.append('photo[description]', this.state.description);

@@ -4,31 +4,28 @@ export default class PhotoEdit extends React.Component {
     constructor(props){
         super(props);
         this.state = props.photo;
-        // debugger
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchPhoto(this.state.id);
     }
 
     handleSubmit(event){
-        event.preventDefault();
-        // debugger
+        // event.preventDefault();
+        let editPhoto = { title: this.state.title, description: this.state.description, location: this.state.location, id: this.state.id };
+        this.props.updatePhoto(editPhoto);
+
         // const formData = new FormData();
         // formData.append('photo[title]', this.state.title);
         // formData.append('photo[description]', this.state.description);
         // formData.append('photo[location]', this.state.location);
-        let editPhoto = {title: this.state.title, description: this.state.description, location: this.state.location, id: this.state.id};
         // formData.append('photo[photographer_id]', this.state.photographer_id);
         // formData.append('photo[photo]', this.state.photoFile);
-        // this.props.createPhoto(formData);
-        this.props.updatePhoto(editPhoto);
+        // this.props.updatePhoto(formData);
     }
 
     handleFile(event) {
-        // debugger
         const file = event.target.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -44,9 +41,9 @@ export default class PhotoEdit extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         const { deletePhoto } = this.props;
+
         return (
             <div className='outer-form-div'>
                 <div className='form-title'>
@@ -94,6 +91,7 @@ export default class PhotoEdit extends React.Component {
                                 </label> */}
                                 <br /><br />
                                 <button className='upload-button' type='submit'>Save Changes</button>
+                                <br/><br/>
                                 <button onClick={deletePhoto} className='upload-button' type='submit'>Delete Photo</button>
                             </div>
                         </div>

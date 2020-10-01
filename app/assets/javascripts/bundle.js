@@ -844,8 +844,7 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PhotoEdit);
 
     _this = _super.call(this, props);
-    _this.state = props.photo; // debugger
-
+    _this.state = props.photo;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -853,35 +852,31 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
   _createClass(PhotoEdit, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
       this.props.fetchPhoto(this.state.id);
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(event) {
-      event.preventDefault(); // debugger
-      // const formData = new FormData();
-      // formData.append('photo[title]', this.state.title);
-      // formData.append('photo[description]', this.state.description);
-      // formData.append('photo[location]', this.state.location);
-
+      // event.preventDefault();
       var editPhoto = {
         title: this.state.title,
         description: this.state.description,
         location: this.state.location,
         id: this.state.id
-      }; // formData.append('photo[photographer_id]', this.state.photographer_id);
+      };
+      this.props.updatePhoto(editPhoto); // const formData = new FormData();
+      // formData.append('photo[title]', this.state.title);
+      // formData.append('photo[description]', this.state.description);
+      // formData.append('photo[location]', this.state.location);
+      // formData.append('photo[photographer_id]', this.state.photographer_id);
       // formData.append('photo[photo]', this.state.photoFile);
-      // this.props.createPhoto(formData);
-
-      this.props.updatePhoto(editPhoto);
+      // this.props.updatePhoto(formData);
     }
   }, {
     key: "handleFile",
     value: function handleFile(event) {
       var _this2 = this;
 
-      // debugger
       var file = event.target.files[0];
       var fileReader = new FileReader();
 
@@ -908,7 +903,6 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state);
       var preview = this.state.photoUrl ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.state.photoUrl
       }) : null;
@@ -952,7 +946,7 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "upload-button",
         type: "submit"
-      }, "Save Changes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Save Changes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: deletePhoto,
         className: "upload-button",
         type: "submit"
@@ -1103,7 +1097,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var PhotoIndexItem = function PhotoIndexItem(props) {
-  // const preview = props.photo.photoUrl ? <img src={props.photo.photoUrl} /> : null;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "photo-preview-index"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1195,7 +1188,7 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var photo = this.props.photo; // const fullPhoto = photo.photoUrl ? <img src={photo.photoUrl} /> : null
+      var photo = this.props.photo;
 
       if (!photo) {
         return null;
@@ -2237,6 +2230,7 @@ var createPhoto = function createPhoto(photo) {
   });
 };
 var updatePhoto = function updatePhoto(photo) {
+  // (photo, photo.id)
   return $.ajax({
     method: 'patch',
     url: "api/photos/".concat(photo.id),
