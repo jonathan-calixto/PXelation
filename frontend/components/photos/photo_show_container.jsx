@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPhoto } from '../../actions/photo_actions';
+import { fetchPhoto, updatePhoto } from '../../actions/photo_actions';
 import PhotoShow from './photo_show';
 
 

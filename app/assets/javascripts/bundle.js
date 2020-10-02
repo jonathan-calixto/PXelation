@@ -1098,16 +1098,15 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           photo = _this$props.photo,
-          currentUserId = _this$props.currentUserId;
+          currentUserId = _this$props.currentUserId,
+          updatePhoto = _this$props.updatePhoto;
       debugger;
 
       if (!photo) {
         return null;
-      }
+      } // let editButton = photo.photographer_id === currentUserId ? <Link to={`/photos/${photo.id}/edit`}><i className="fab fa-flickr">Edit</i></Link> : null;
 
-      var editButton = photo.photographer_id === currentUserId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-flickr"
-      }, "Edit") : null;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grey-black-bgr"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1139,7 +1138,11 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
         className: "far fa-plus-square"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-share-alt-square"
-      }), editButton), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/photos/".concat(photo.id, "/edit")
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-flickr"
+      }, "Edit"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-info-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-img-div"

@@ -23,13 +23,13 @@ export default class PhotoShow extends React.Component {
 
 
     render() {
-        const { photo, currentUserId } = this.props;
+        const { photo, currentUserId, updatePhoto } = this.props;
         debugger
         if (!photo) {
             return null;
         }
-        
-        let editButton = photo.photographer_id === currentUserId ? <i className="fab fa-flickr">Edit</i> : null;
+
+        // let editButton = photo.photographer_id === currentUserId ? <Link to={`/photos/${photo.id}/edit`}><i className="fab fa-flickr">Edit</i></Link> : null;
 
         return (
             <div>
@@ -43,10 +43,10 @@ export default class PhotoShow extends React.Component {
                         <img className='img-tag' src={photo.photoUrl} />
                     </div>
                 </div>
-
+                
                 <div className='main-container-div'>
                     <div className='info-container-div'>
-                        <div className='icon-container-div'><i className="far fa-heart"></i><i className="far fa-plus-square"></i><i className="fas fa-share-alt-square"></i>{editButton}</div>
+                        <div className='icon-container-div'><i className="far fa-heart"></i><i className="far fa-plus-square"></i><i className="fas fa-share-alt-square"></i><Link to={`/photos/${photo.id}/edit`}><i className="fab fa-flickr">Edit</i></Link></div>
                         <div className='profile-info-div'>
                         
                             <div className='profile-img-div'>
