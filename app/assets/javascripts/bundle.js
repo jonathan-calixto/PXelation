@@ -1338,14 +1338,16 @@ var PhotoUpload = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: this.state.title,
         onChange: this.update('title'),
-        required: true
+        required: true,
+        className: "upload-input"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "upload-labels"
       }, "Location:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.location,
         onChange: this.update('location'),
-        placeholder: "Enter Location"
+        placeholder: "Enter Location",
+        className: "upload-input"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "upload-labels"
       }, "Description:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
@@ -1353,7 +1355,8 @@ var PhotoUpload = /*#__PURE__*/function (_React$Component) {
         rows: "3",
         value: this.state.description,
         onChange: this.update('description'),
-        placeholder: "e.g. Low angle view of young man surfing in the ocean with a clear blue sky"
+        placeholder: "e.g. Low angle view of young man surfing in the ocean with a clear blue sky",
+        className: "upload-input"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "upload-labels"
       }, "Choose Photograph:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {

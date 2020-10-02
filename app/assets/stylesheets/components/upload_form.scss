@@ -44,7 +44,7 @@
             input {
                 border: solid 1px gainsboro;
                 border-radius: 5px;
-                text-indent: 20px;
+                // text-indent: 5px;
             }
 
             textarea {
@@ -52,6 +52,10 @@
                 border-radius: 5px;
             }
             margin: 10px;
+        }
+
+        .upload-input {
+            text-indent: 10px;
         }
 
         .upload-button {

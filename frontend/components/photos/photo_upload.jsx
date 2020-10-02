@@ -55,34 +55,40 @@ export default class PhotoUpload extends React.Component {
                             <div className='centering-div'>
                                 <label className='upload-labels'>Title:
                                     <br/>
-                                    <input type="text"
-                                            value={this.state.title}
-                                            onChange={this.update('title')}
-                                            required
+                                    <input 
+                                        type="text"
+                                        value={this.state.title}
+                                        onChange={this.update('title')}
+                                        required
+                                        className='upload-input'
                                     />
                                 </label>
                                 <br/><br/>
                                 <label className='upload-labels'>Location:
                                     <br/>
-                                    <input type="text"
-                                            value={this.state.location}
-                                            onChange={this.update('location')}
-                                            placeholder='Enter Location'
+                                    <input 
+                                        type="text"
+                                        value={this.state.location}
+                                        onChange={this.update('location')}
+                                        placeholder='Enter Location'
+                                        className='upload-input'
                                     />
                                 </label>
                                 <br/><br/>
                                 <label className='upload-labels'>Description:
                                     <br/>
-                                    <textarea cols="40" rows="3"
-                                                value={this.state.description}
-                                                onChange={this.update('description')}
-                                                placeholder='e.g. Low angle view of young man surfing in the ocean with a clear blue sky'
+                                    <textarea 
+                                        cols="40" rows="3"
+                                        value={this.state.description}
+                                        onChange={this.update('description')}
+                                        placeholder='e.g. Low angle view of young man surfing in the ocean with a clear blue sky'
+                                        className='upload-input'
                                     ></textarea>
                                 </label>
                                 <br/><br/>
                                 <label className='upload-labels'>Choose Photograph:
                                     <br/>
-                                    <input type="file" onChange={this.handleFile}/>
+                                    <input type="file" onChange={this.handleFile} />
                                 </label>
                                 <br/><br/>
                                 <button className='upload-button' type='submit'>Upload New Photo</button>
