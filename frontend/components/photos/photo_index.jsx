@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotoIndexItem from './photo_index_item';
 import Masonry from "react-masonry-css";
+import MasonryInfiniteScroller from 'react-masonry-infinite';
 
 
 export default class PhotoIndex extends React.Component {
