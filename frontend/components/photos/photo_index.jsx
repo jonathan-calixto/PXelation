@@ -20,7 +20,6 @@ export default class PhotoIndex extends React.Component {
 
     render() {
         const { photos, deletePhoto } = this.props;
-        debugger
         return (
             <div className='photo-container-div'>
                 <div>

@@ -6,7 +6,9 @@ import PhotoShow from './photo_show';
 
 const mSTP = (state, ownProps) => {
     debugger
-    return {photo: state.entities.photos[ownProps.match.params.photoId]};
+    return {photo: state.entities.photos[ownProps.match.params.photoId], 
+        currenUserId: state.session.id
+    };
 };
 
 const mDTP = dispatch => ({

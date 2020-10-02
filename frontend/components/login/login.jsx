@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProfileButtonContainer from '../buttons/profile_button_container';
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -10,21 +9,20 @@ export default class Login extends React.Component {
         };
         this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    }
+
+    handleLogoutClick(e){
+        e.stopPropagation();
+        this.props.logout();
     }
 
     handleBlur(e) {
-        e.stopPropagation();
-        this.state.logout();
-        this.setState({ show: false }, () => {
-            document.removeEventListener('click', this.handleBlur);
-        });
+        this.setState({ show: false });
     }
 
     handleClick(e) {
-        e.stopPropagation();
-        this.setState({ show: !this.state.show }, () => {
-            document.addEventListener('click', this.handleBlur);
-        });
+        this.setState({ show: true });
     }
 
     render(){
@@ -44,27 +42,23 @@ export default class Login extends React.Component {
             <div className='nav-login'>
                 <input className='search-bar' type="text" placeholder='Search PXelation'/>
 
-                <button onClick={logout}><i className="fas fa-sign-out-alt"></i></button>
-                {/* <ProfileButtonContainer /> */}
+                <button onClick={logout}><i className="fas fa-sign-out-alt temp-logout"></i></button>
 
                 <div className='button-dropdown'>
                     <button className='button-link button-user' onClick={this.handleClick} onBlur={this.handleBlur}><i className="fas fa-user-circle"></i></button>
 
                     {this.state.show ? (
-                        <ul id="user-dropdown" className="user-dropdown">
-                            <li>
-                                <ul className="editions">
-                                    <span className="dropdown-subtitle">{currentUser.username}</span>
-                                    <li><Link to='/photos/'>Profile</Link></li>
-                                    <li><button onClick={logout}><i className="fas fa-sign-out-alt"></i> Log Out</button></li>
-                                </ul>
-                            </li>
+                        <ul className="user-dropdown" onClick={e => e.stopPropagation()}>
+                            <li><span className="dropdown-subtitle">{currentUser.username}</span></li><br/>
+                            <li><Link to='/photos/'>Profile (work in progress)</Link></li><br/>
+                            <li><button onClick={this.handleLogoutClick}><i className="fas fa-sign-out-alt"></i> Log Out (work in progress)</button></li>
                         </ul>
                     ) : null}
                 </div>
 
-                <button className='button-link'><i className="far fa-paper-plane"></i></button>
-                <button className='button-link'><i className="far fa-bell"></i></button>
+                <button className='button-link rest'><i className="far fa-paper-plane"></i></button>
+                <button className='button-link rest'><i className="far fa-bell"></i></button>
+                
                 <Link to="/photos/upload" className='button-upload'><i className="fas fa-arrow-up"></i> Upload</Link>
             </div>
         )

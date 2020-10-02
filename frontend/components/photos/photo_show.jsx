@@ -23,12 +23,14 @@ export default class PhotoShow extends React.Component {
 
 
     render() {
-        const { photo } = this.props;
-
+        const { photo, currentUserId } = this.props;
+        debugger
         if (!photo) {
             return null;
         }
         
+        let editButton = photo.photographer_id === currentUserId ? <i className="fab fa-flickr">Edit</i> : null;
+
         return (
             <div>
                 <div className='grey-black-bgr'>
@@ -44,7 +46,7 @@ export default class PhotoShow extends React.Component {
 
                 <div className='main-container-div'>
                     <div className='info-container-div'>
-                        <div className='icon-container-div'><i className="far fa-heart"></i><i className="far fa-plus-square"></i><i className="fas fa-share-alt-square"></i></div>
+                        <div className='icon-container-div'><i className="far fa-heart"></i><i className="far fa-plus-square"></i><i className="fas fa-share-alt-square"></i>{editButton}</div>
                         <div className='profile-info-div'>
                         
                             <div className='profile-img-div'>
