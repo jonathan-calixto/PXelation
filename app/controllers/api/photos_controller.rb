@@ -4,7 +4,7 @@ class Api::PhotosController < ApplicationController
 
     def index
         @photos = Photo.with_attached_photo.all
-        render = 'api/photos/index'
+        render 'api/photos/index'
     end
 
     def show

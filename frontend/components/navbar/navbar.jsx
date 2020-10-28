@@ -13,7 +13,11 @@ export default class NavBar extends React.Component{
                     <ul className='listed-items'>
                         {menuItems.map((item, idx) => {
                             return(
-                                <li key={idx}><a className={item.className} href={item.url}>{item.title}</a></li>
+                                <li key={idx}>
+                                    <a className={item.className} href={item.url}>
+                                        {item.title}
+                                    </a>
+                                </li>
                             );
                         })}
                     </ul>

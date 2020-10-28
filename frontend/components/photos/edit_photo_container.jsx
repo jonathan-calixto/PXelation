@@ -2,10 +2,9 @@ import {connect} from 'react-redux';
 import { fetchPhoto, updatePhoto, deletePhoto } from '../../actions/photo_actions';
 import PhotoEdit from './photo_edit';
 
-const mSTP = (state, ownProps) => {
-    const photo = state.entities.photos[ownProps.match.params.photoId];
-    return {photo};
-};
+const mSTP = (state, ownProps) => ({
+    photo: state.entities.photos[ownProps.match.params.photoId]
+});
 
 const mDTP = dispatch => ({
     fetchPhoto: photoId => dispatch(fetchPhoto(photoId)),

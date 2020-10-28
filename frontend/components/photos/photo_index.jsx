@@ -25,7 +25,11 @@ export default class PhotoIndex extends React.Component {
                 <div>
                     <Masonry 
                         className='photo-index-masonry' 
-                        breakpointCols={{default: 5, 1000: 4, 800: 2}} 
+                        breakpointCols={{
+                            default: 5, 
+                            1000: 4, 
+                            800: 2
+                        }} 
                         columnClassName='masonry-grid-column'
                     >
                         {photos.map(photo => {

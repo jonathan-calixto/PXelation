@@ -160,8 +160,8 @@ var updatePhoto = function updatePhoto(photo) {
 };
 var deletePhoto = function deletePhoto(photoId) {
   return function (dispatch) {
-    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["deletePhoto"](photoId).then(function (photoId) {
-      return dispatch(removePhoto(photoId));
+    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["deletePhoto"](photoId).then(function (photo) {
+      return dispatch(removePhoto(photo.id));
     });
   };
 };
@@ -624,20 +624,16 @@ var menuItems = [{
   url: '/#/photos/',
   className: 'nav-links'
 }, {
-  title: "Licensing",
-  url: '/',
-  className: 'nav-links'
-}, {
-  title: "Creator Stories",
-  url: '/',
-  className: 'nav-links'
-}, {
-  title: "Blog",
-  url: '/',
-  className: 'nav-links'
-}, {
-  title: "About Me",
+  title: "LinkedIn",
   url: 'https://www.linkedin.com/in/calixtojonathan/',
+  className: 'nav-links'
+}, {
+  title: "Github",
+  url: 'https://github.com/Serendipitydeus/PXelation',
+  className: 'nav-links'
+}, {
+  title: "Portfolio",
+  url: '/',
   className: 'nav-links'
 }];
 
@@ -660,9 +656,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  var photo = state.entities.photos[ownProps.match.params.photoId];
   return {
-    photo: photo
+    photo: state.entities.photos[ownProps.match.params.photoId]
   };
 };
 
@@ -735,6 +730,7 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = props.photo;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this["delete"] = _this["delete"].bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -760,6 +756,12 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
       // formData.append('photo[photographer_id]', this.state.photographer_id);
       // formData.append('photo[photo]', this.state.photoFile);
       // this.props.updatePhoto(formData);
+    }
+  }, {
+    key: "delete",
+    value: function _delete(event) {
+      event.preventDefault();
+      this.props.deletePhoto(this.props.photo.id);
     }
   }, {
     key: "handleFile",
@@ -795,7 +797,6 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
       var preview = this.state.photoUrl ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.state.photoUrl
       }) : null;
-      var deletePhoto = this.props.deletePhoto;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "outer-form-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -836,7 +837,7 @@ var PhotoEdit = /*#__PURE__*/function (_React$Component) {
         className: "upload-button",
         type: "submit"
       }, "Save Changes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: deletePhoto,
+        onClick: this["delete"],
         className: "upload-button",
         type: "submit"
       }, "Delete Photo"))))));
@@ -1100,7 +1101,6 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
           photo = _this$props.photo,
           currentUserId = _this$props.currentUserId,
           updatePhoto = _this$props.updatePhoto;
-      debugger;
 
       if (!photo) {
         return null;
@@ -1200,7 +1200,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     photo: state.entities.photos[ownProps.match.params.photoId],
     currenUserId: state.session.id
@@ -1937,7 +1936,7 @@ var PhotosReducer = function PhotosReducer() {
       return action.photos;
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PHOTO"]:
-      return _defineProperty({}, action.photo.id, action.photo);
+      return Object.assign({}, state, _defineProperty({}, action.photo.id, action.photo));
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_PHOTO"]:
       delete newState[action.reportId];

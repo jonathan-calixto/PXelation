@@ -5,6 +5,7 @@ export default class PhotoEdit extends React.Component {
         super(props);
         this.state = props.photo;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
     componentDidMount() {
@@ -13,7 +14,12 @@ export default class PhotoEdit extends React.Component {
 
     handleSubmit(event){
         event.preventDefault();
-        let editPhoto = { title: this.state.title, description: this.state.description, location: this.state.location, id: this.state.id };
+        let editPhoto = { 
+            title: this.state.title, 
+            description: this.state.description, 
+            location: this.state.location, 
+            id: this.state.id 
+        };
         this.props.updatePhoto(editPhoto);
 
         // const formData = new FormData();
@@ -23,6 +29,11 @@ export default class PhotoEdit extends React.Component {
         // formData.append('photo[photographer_id]', this.state.photographer_id);
         // formData.append('photo[photo]', this.state.photoFile);
         // this.props.updatePhoto(formData);
+    }
+
+    delete(event){
+        event.preventDefault();
+        this.props.deletePhoto(this.props.photo.id);
     }
 
     handleFile(event) {
@@ -42,7 +53,6 @@ export default class PhotoEdit extends React.Component {
 
     render() {
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
-        const { deletePhoto } = this.props;
 
         return (
             <div className='outer-form-div'>
@@ -92,7 +102,7 @@ export default class PhotoEdit extends React.Component {
                                 <br /><br />
                                 <button className='upload-button' type='submit'>Save Changes</button>
                                 <br/><br/>
-                                <button onClick={deletePhoto} className='upload-button' type='submit'>Delete Photo</button>
+                                <button onClick={this.delete} className='upload-button' type='submit'>Delete Photo</button>
                             </div>
                         </div>
                     </div>

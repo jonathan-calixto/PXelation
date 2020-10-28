@@ -24,7 +24,6 @@ export default class PhotoShow extends React.Component {
 
     render() {
         const { photo, currentUserId, updatePhoto } = this.props;
-        debugger
         if (!photo) {
             return null;
         }

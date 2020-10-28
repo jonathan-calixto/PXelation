@@ -35,5 +35,5 @@ export const updatePhoto = (photo) => dispatch => (
 );
 export const deletePhoto = (photoId) => dispatch => (
     PhotoAPIUtils.deletePhoto(photoId)
-        .then(photoId => dispatch(removePhoto(photoId)))
+        .then(photo => dispatch(removePhoto(photo.id)))
 );
