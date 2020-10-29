@@ -23,13 +23,13 @@ export default class PhotoShow extends React.Component {
 
 
     render() {
-        const { photo, currentUserId, updatePhoto } = this.props;
+        const { photo, currentUserId } = this.props;
         if (!photo) {
             return null;
         }
 
-        // let editButton = photo.photographer_id === currentUserId ? <Link to={`/photos/${photo.id}/edit`}><i className="fab fa-flickr">Edit</i></Link> : null;
-
+        const editButton = photo.photographer_id === currentUserId ? <Link to={`/photos/${photo.id}/edit`}><i className="fab fa-flickr"> Edit</i></Link> : null;
+        
         return (
             <div>
                 <div className='grey-black-bgr'>
@@ -45,7 +45,7 @@ export default class PhotoShow extends React.Component {
                 
                 <div className='main-container-div'>
                     <div className='info-container-div'>
-                        <div className='icon-container-div'><i className="far fa-heart"></i><i className="far fa-plus-square"></i><i className="fas fa-share-alt-square"></i><Link to={`/photos/${photo.id}/edit`}><i className="fab fa-flickr">Edit</i></Link></div>
+                        <div className='icon-container-div'><i className="far fa-heart"></i><i className="far fa-plus-square"></i><i className="fas fa-share-alt-square"></i>{editButton}</div>
                         <div className='profile-info-div'>
                         
                             <div className='profile-img-div'>
@@ -54,7 +54,7 @@ export default class PhotoShow extends React.Component {
 
                             <div className='title-user-div'>
                                 <h1>{photo.title}</h1>
-                                <p>by (need to add user to props)</p>
+                                <p>by {photo.photographer_name}</p>
                             </div> 
                         </div>
 

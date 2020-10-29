@@ -1099,14 +1099,17 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           photo = _this$props.photo,
-          currentUserId = _this$props.currentUserId,
-          updatePhoto = _this$props.updatePhoto;
+          currentUserId = _this$props.currentUserId;
 
       if (!photo) {
         return null;
-      } // let editButton = photo.photographer_id === currentUserId ? <Link to={`/photos/${photo.id}/edit`}><i className="fab fa-flickr">Edit</i></Link> : null;
+      }
 
-
+      var editButton = photo.photographer_id === currentUserId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/photos/".concat(photo.id, "/edit")
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-flickr"
+      }, " Edit")) : null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "grey-black-bgr"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1138,11 +1141,7 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
         className: "far fa-plus-square"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-share-alt-square"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/photos/".concat(photo.id, "/edit")
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-flickr"
-      }, "Edit"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), editButton), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-info-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-img-div"
@@ -1152,7 +1151,7 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
         className: "fas fa-user-circle"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "title-user-div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, photo.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "by (need to add user to props)"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, photo.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "by ", photo.photographer_name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "location-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-map-marker-alt"
@@ -1202,7 +1201,7 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     photo: state.entities.photos[ownProps.match.params.photoId],
-    currenUserId: state.session.id
+    currentUserId: state.session.id
   };
 };
 
@@ -1311,6 +1310,7 @@ var PhotoUpload = /*#__PURE__*/function (_React$Component) {
       formData.append('photo[location]', this.state.location);
       formData.append('photo[photographer_id]', this.state.photographer_id);
       formData.append('photo[photo]', this.state.photoFile);
+      formData.append('photo[photographer_name]', this.state.photographer_name);
       this.props.createPhoto(formData);
     }
   }, {
@@ -1404,6 +1404,7 @@ var mSTP = function mSTP(state) {
       description: '',
       location: '',
       photographer_id: state.session.id,
+      photographer_name: state.entities.users[state.session.id].username,
       photoFile: null,
       photoUrl: null
     },

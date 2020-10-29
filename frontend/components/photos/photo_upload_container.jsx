@@ -4,17 +4,20 @@ import { createPhoto } from '../../actions/photo_actions';
 import PhotoUpload from './photo_upload';
 
 
-const mSTP = state => ({
-    photo: {
-        title: '',
-        description: '',
-        location: '',
-        photographer_id: state.session.id,
-        photoFile: null,
-        photoUrl: null
-    },
-    formType: 'Upload New Photo'
-});
+const mSTP = state => {
+    return {
+        photo: {
+            title: '',
+            description: '',
+            location: '',
+            photographer_id: state.session.id,
+            photographer_name: state.entities.users[state.session.id].username,
+            photoFile: null,
+            photoUrl: null,
+        },
+        formType: 'Upload New Photo'
+    };
+};
 
 const mDTP = dispatch => ({
     createPhoto: photo => dispatch(createPhoto(photo))
