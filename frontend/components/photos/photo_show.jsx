@@ -53,7 +53,7 @@ export default class PhotoShow extends React.Component {
 
                             <div className='title-user-div'>
                                 <h1>{photo.title}</h1>
-                                <p>by {photo.photographer_name}</p>
+                                <p>by {photo.photographerName}</p>
                             </div> 
                         </div>
 

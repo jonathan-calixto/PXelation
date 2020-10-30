@@ -1151,7 +1151,7 @@ var PhotoShow = /*#__PURE__*/function (_React$Component) {
         className: "fas fa-user-circle"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "title-user-div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, photo.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "by ", photo.photographer_name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, photo.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "by ", photo.photographerName))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "location-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-map-marker-alt"
@@ -1310,7 +1310,7 @@ var PhotoUpload = /*#__PURE__*/function (_React$Component) {
       formData.append('photo[location]', this.state.location);
       formData.append('photo[photographer_id]', this.state.photographer_id);
       formData.append('photo[photo]', this.state.photoFile);
-      formData.append('photo[photographer_name]', this.state.photographer_name);
+      formData.append('photo[photographerName]', this.state.photographerName);
       this.props.createPhoto(formData);
     }
   }, {
@@ -1404,7 +1404,7 @@ var mSTP = function mSTP(state) {
       description: '',
       location: '',
       photographer_id: state.session.id,
-      photographer_name: state.entities.users[state.session.id].username,
+      photographerName: state.entities.users[state.session.id].username,
       photoFile: null,
       photoUrl: null
     },

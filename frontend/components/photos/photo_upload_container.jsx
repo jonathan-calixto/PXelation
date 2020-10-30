@@ -11,7 +11,7 @@ const mSTP = state => {
             description: '',
             location: '',
             photographer_id: state.session.id,
-            photographer_name: state.entities.users[state.session.id].username,
+            photographerName: state.entities.users[state.session.id].username,
             photoFile: null,
             photoUrl: null,
         },
