@@ -6,9 +6,9 @@ export default class NavBar extends React.Component{
     render(){
         return(
             <div className='nav-links-bar'>
-                <h1 className='logo'>
-                    PXelation
-                </h1>
+                <div className='logo'>
+                    <img src="../../../app/assets/images/pxelation_logo.png" alt=""/>
+                </div>
                 <div className='links'>
                     <ul className='listed-items'>
                         {menuItems.map((item, idx) => {

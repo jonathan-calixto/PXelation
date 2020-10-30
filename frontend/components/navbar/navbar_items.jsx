@@ -11,7 +11,7 @@ export const menuItems = [
     },
     {
         title: "Github",
-        url: 'https://github.com/Serendipitydeus/PXelation',
+        url: 'https://github.com/jonathan-calixto/PXelation',
         className: 'nav-links'
     },
     {
