@@ -10,6 +10,7 @@ import PhotoUploadContainer from './photos/photo_upload_container';
 import PhotoIndexContainer from './photos/photo_index_container';
 import PhotoShowContainer from './photos/photo_show_container';
 import EditPhotoContainer from './photos/edit_photo_container';
+import UserProfileContainer from './user_profile/user_profile_container';
 
 
 const App = () => (
@@ -29,6 +30,7 @@ const App = () => (
                 <ProtectedRoute exact path="/photos/upload" component={PhotoUploadContainer}/>
                 <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer}/>
                 <ProtectedRoute exact path='/photos/:photoId/edit' component={EditPhotoContainer}/>
+                <ProtectedRoute exact path='/users/:userId' component={UserProfileContainer}/>
             </Switch>
     </div>
 );

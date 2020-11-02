@@ -31,8 +31,8 @@ export default class PhotoUpload extends React.Component {
         formData.append('photo[description]', this.state.description);
         formData.append('photo[location]', this.state.location);
         formData.append('photo[photographer_id]', this.state.photographer_id);
-        formData.append('photo[photo]', this.state.photoFile);
         formData.append('photo[photographerName]', this.state.photographerName);
+        formData.append('photo[photo]', this.state.photoFile);
         this.props.createPhoto(formData);
     }
 

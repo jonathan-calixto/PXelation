@@ -18,10 +18,12 @@ export default class Login extends React.Component {
     }
 
     handleBlur(e) {
-        this.setState({ show: false });
+        e.stopPropagation();
+        return e => this.setState({ show: false });
     }
 
     handleClick(e) {
+        e.preventDefault();
         this.setState({ show: true });
     }
 
@@ -50,7 +52,7 @@ export default class Login extends React.Component {
                     {this.state.show ? (
                         <ul className="user-dropdown" onClick={e => e.stopPropagation()}>
                             <li><span className="dropdown-subtitle">{currentUser.username}</span></li><br/>
-                            <li><Link to='/photos/'>Profile (work in progress)</Link></li><br/>
+                            <li><Link to={`/users/${currentUser.id}`}>Profile (work in progress)</Link></li><br/>
                             <li><button onClick={this.handleLogoutClick}><i className="fas fa-sign-out-alt"></i> Log Out (work in progress)</button></li>
                         </ul>
                     ) : null}

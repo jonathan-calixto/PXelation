@@ -20,6 +20,7 @@ export default class PhotoIndex extends React.Component {
 
     render() {
         const { photos, deletePhoto } = this.props;
+        
         return (
             <div className='photo-container-div'>
                 <div>
@@ -34,9 +35,9 @@ export default class PhotoIndex extends React.Component {
                     >
                         {photos.map(photo => {
                             return <PhotoIndexItem 
-                                    photo={photo}
-                                    deletePhoto={deletePhoto}
-                                    key={photo.id}
+                                photo={photo}
+                                deletePhoto={deletePhoto}
+                                key={photo.id}
                             />
                         })}
                     </Masonry>
