@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import LoginContainer from './login/login_container';
 import NavBar from './navbar/navbar';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
-import SplashPageContainer from './splash/splash_container';
+import SplashContainer from './splash/splash_container';
 import PhotoUploadContainer from './photos/photo_upload_container';
 import PhotoIndexContainer from './photos/photo_index_container';
 import PhotoShowContainer from './photos/photo_show_container';
@@ -23,7 +23,7 @@ const App = () => (
             </header>
         
             <Switch>
-                <Route exact path="/" component={SplashPageContainer}/>
+                <Route exact path="/" component={SplashContainer}/>
                 <AuthRoute exact path="/login" component={LoginFormContainer}/>
                 <AuthRoute exact path="/signup" component={SignupFormContainer}/>
                 <ProtectedRoute exact path='/photos' component={PhotoIndexContainer}/>
