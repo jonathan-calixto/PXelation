@@ -16,7 +16,7 @@ export const menuItems = [
     },
     {
         title: "Portfolio",
-        url: '/',
+        url: 'https://jonathan-calixto.github.io/',
         className: 'nav-links'
     },
 ];

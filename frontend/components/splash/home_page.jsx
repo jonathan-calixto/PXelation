@@ -48,7 +48,7 @@ const homePage = () => (
                 </div>
                 <div className='triple-links'>
                     <span className='footer-link'><a href="https://www.linkedin.com/in/calixtojonathan/">LinkedIn</a></span>
-                    <span className='footer-link'><a href="https://github.com/Serendipitydeus/PXelation">GitHub</a></span>
+                    <span className='footer-link'><a href="https://github.com/jonathan-calixto/PXelation">GitHub</a></span>
                     <span className='footer-link'><a href="">Jonathan Calixto</a></span>
                 </div>
             </div>
