@@ -22,13 +22,18 @@ const homeFeed = () => (
                     </div>
                 </div>
                 <div>
-                    <div>
+                    <div className='choice-div'>
                         <h3>Explore the community</h3>
                         <p>Discover photos from all over the world</p>
                     </div>
-                    <div>
-                        <h3>Editor's Choice</h3>
-                        <p>Photo's Selected by our Editors</p>
+                    <div className='centering-editors'>
+                        <div className='editors-div'>
+                            <div className='editors-header'>
+                                <h3>Editor's Choice</h3>
+                                <p>Photo's Selected by our Editors</p>
+                            </div>
+                            <div className='editors-images'></div>
+                        </div>
                     </div>
                 </div>
             </div>
