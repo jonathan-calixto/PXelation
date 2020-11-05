@@ -146,12 +146,24 @@
     justify-content: center;
     
     .centering-body-div {
-        padding-left: 64px;
-        padding-right: 64px;
+        margin-left: 64px;
+        margin-right: 64px;
 
         .welcome-header-div {
             display: flex;
             justify-content: center;
+            border-bottom: solid 1px gray;
+
+            h3 {
+                margin: auto;
+                padding-bottom: 5px;
+                font-size: 16px;
+            }
+
+            p {
+                margin-bottom: 15px;
+                font-size: 16px;
+            }
         }
 
 
