@@ -19,8 +19,10 @@ export default class UserProfile extends React.Component {
             <div className='top-profile-div'>
                 <div className='profile-header-div'>
                     <div>
-                        <p><i className="fas fa-user-circle"></i></p>
-                        <h1>{currentUser.username}</h1>
+                        <div className='profile-info-div'>
+                            <p><i className="fas fa-user-circle"></i></p>
+                            <h1>{currentUser.username}</h1>
+                        </div>
                         <div className='categories-div'>
                             <p>Photos</p>
                             <p>Galleries</p>

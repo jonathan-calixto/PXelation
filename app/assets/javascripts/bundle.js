@@ -397,26 +397,20 @@ var Login = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Login, [{
     key: "handleLogoutClick",
-    value: function handleLogoutClick(e) {
-      e.stopPropagation();
+    value: function handleLogoutClick() {
       this.props.logout();
     }
   }, {
     key: "handleBlur",
     value: function handleBlur(e) {
-      var _this2 = this;
-
-      e.stopPropagation();
-      return function (e) {
-        return _this2.setState({
-          show: false
-        });
-      };
+      console.log(e.relatedTarget);
+      this.setState({
+        show: false
+      });
     }
   }, {
     key: "handleClick",
     value: function handleClick(e) {
-      e.preventDefault();
       this.setState({
         show: true
       });
@@ -424,7 +418,7 @@ var Login = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var _this$props = this.props,
           currentUser = _this$props.currentUser,
@@ -468,21 +462,17 @@ var Login = /*#__PURE__*/function (_React$Component) {
           className: "button-dropdown"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "button-link button-user",
-          onClick: _this3.handleClick,
-          onBlur: _this3.handleBlur
+          onClick: _this2.handleClick
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-user-circle"
-        })), _this3.state.show ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "user-dropdown",
-          onClick: function onClick(e) {
-            return e.stopPropagation();
-          }
+        })), _this2.state.show ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "user-dropdown"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "dropdown-subtitle"
         }, currentUser.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/users/".concat(currentUser.id)
         }, "Profile (work in progress)")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this3.handleLogoutClick
+          onClick: _this2.handleLogoutClick
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-sign-out-alt"
         }), " Log Out (work in progress)"))) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -645,6 +635,10 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuItems", function() { return menuItems; });
 var menuItems = [{
+  title: "PXelation",
+  url: '/#/',
+  className: 'nav-links'
+}, {
   title: "Discover",
   url: '/#/photos/',
   className: 'nav-links'
@@ -2047,9 +2041,11 @@ var UserProfile = /*#__PURE__*/function (_React$Component) {
         className: "top-profile-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-header-div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-info-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-user-circle"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, currentUser.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "categories-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Photos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Galleries")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-div"

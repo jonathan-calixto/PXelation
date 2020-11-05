@@ -1,5 +1,10 @@
 export const menuItems = [
     {
+        title: "PXelation",
+        url: '/#/',
+        className: 'nav-links'
+    },
+    {
         title: "Discover",
         url: '/#/photos/',
         className: 'nav-links'

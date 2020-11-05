@@ -12,18 +12,16 @@ export default class Login extends React.Component {
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
     }
 
-    handleLogoutClick(e){
-        e.stopPropagation();
+    handleLogoutClick(){
         this.props.logout();
     }
 
-    handleBlur(e) {
-        e.stopPropagation();
-        return e => this.setState({ show: false });
+    handleBlur(e) {  
+        console.log(e.relatedTarget);    
+        this.setState({ show: false });
     }
 
     handleClick(e) {
-        e.preventDefault();
         this.setState({ show: true });
     }
 
@@ -47,10 +45,10 @@ export default class Login extends React.Component {
                 <button onClick={logout}><i className="fas fa-sign-out-alt temp-logout"></i></button>
 
                 <div className='button-dropdown'>
-                    <button className='button-link button-user' onClick={this.handleClick} onBlur={this.handleBlur}><i className="fas fa-user-circle"></i></button>
+                    <button className='button-link button-user' onClick={this.handleClick} ><i className="fas fa-user-circle"></i></button>
 
                     {this.state.show ? (
-                        <ul className="user-dropdown" onClick={e => e.stopPropagation()}>
+                        <ul className="user-dropdown">
                             <li><span className="dropdown-subtitle">{currentUser.username}</span></li><br/>
                             <li><Link to={`/users/${currentUser.id}`}>Profile (work in progress)</Link></li><br/>
                             <li><button onClick={this.handleLogoutClick}><i className="fas fa-sign-out-alt"></i> Log Out (work in progress)</button></li>
