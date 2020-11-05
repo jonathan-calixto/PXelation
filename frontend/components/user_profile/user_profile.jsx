@@ -17,15 +17,18 @@ export default class UserProfile extends React.Component {
 
         return(
             <div className='top-profile-div'>
-                <div>
-                    <p><i className="fas fa-user-circle"></i></p>
-                    <h1>{currentUser.username}</h1>
-                </div>
-                <div className='container-div'>
+                <div className='profile-header-div'>
                     <div>
-                        <p>Photos</p>
-                        <p>Galleries</p>
+                        <p><i className="fas fa-user-circle"></i></p>
+                        <h1>{currentUser.username}</h1>
+                        <div className='categories-div'>
+                            <p>Photos</p>
+                            <p>Galleries</p>
+                        </div>
                     </div>
+                </div>
+
+                <div className='container-div'>
                     <div className='photo-container-div'>
                         <Masonry
                             className='photo-index-masonry'
