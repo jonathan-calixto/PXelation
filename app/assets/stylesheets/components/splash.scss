@@ -102,3 +102,62 @@
         }
     }
 }
+
+
+
+.feed-header-div {
+    width: 100%;
+    background-color: white;
+    height: 118 px;
+    justify-content: center;
+    
+    .inner-header-div {
+        padding-left: 64px;
+        padding-right: 64px;
+
+        .home-feed-div {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header-p-tag {
+            color: gray;
+        }
+    }
+
+    .home-feed-button-div {
+        margin-left: 64px;
+        color: royalblue;
+        border-bottom: 3px solid royalblue;
+        width: 53px;
+        font-weight: 500;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.feed-body-div {
+    background-color: ghostwhite;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    
+    .centering-body-div {
+        padding-left: 64px;
+        padding-right: 64px;
+
+        .welcome-header-div {
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+
+
+
+    }
+}
