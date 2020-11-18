@@ -1,14 +1,14 @@
 export const menuItems = [
-    {
-        title: "PXelation",
-        url: '/#/',
-        className: 'nav-links'
-    },
-    {
-        title: "Discover",
-        url: '/#/photos/',
-        className: 'nav-links'
-    },
+    // {
+    //     title: "PXelation",
+    //     url: '/#/',
+    //     className: 'nav-links'
+    // },
+    // {
+    //     title: "Discover",
+    //     url: '/#/photos/',
+    //     className: 'nav-links'
+    // },
     {
         title: "LinkedIn",
         url: 'https://www.linkedin.com/in/calixtojonathan/',

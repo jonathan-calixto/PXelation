@@ -11,6 +11,8 @@ export default class NavBar extends React.Component{
                 </div>
                 <div className='links'>
                     <ul className='listed-items'>
+                        <li key='logo'><a className='nav-links' href="/#/">PXelation</a></li>
+                        <li key='discover'><a className='nav-links' href="/#/photos/">Discover</a></li>
                         {menuItems.map((item, idx) => {
                             return(
                                 <li key={idx}>

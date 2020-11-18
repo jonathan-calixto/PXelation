@@ -606,7 +606,17 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "links"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "listed-items"
-      }, _navbar_items__WEBPACK_IMPORTED_MODULE_2__["menuItems"].map(function (item, idx) {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        key: "logo"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-links",
+        href: "/#/"
+      }, "PXelation")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        key: "discover"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-links",
+        href: "/#/photos/"
+      }, "Discover")), _navbar_items__WEBPACK_IMPORTED_MODULE_2__["menuItems"].map(function (item, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: idx
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -635,15 +645,17 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuItems", function() { return menuItems; });
-var menuItems = [{
-  title: "PXelation",
-  url: '/#/',
-  className: 'nav-links'
-}, {
-  title: "Discover",
-  url: '/#/photos/',
-  className: 'nav-links'
-}, {
+var menuItems = [// {
+//     title: "PXelation",
+//     url: '/#/',
+//     className: 'nav-links'
+// },
+// {
+//     title: "Discover",
+//     url: '/#/photos/',
+//     className: 'nav-links'
+// },
+{
   title: "LinkedIn",
   url: 'https://www.linkedin.com/in/calixtojonathan/',
   className: 'nav-links'
