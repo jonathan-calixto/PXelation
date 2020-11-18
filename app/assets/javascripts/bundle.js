@@ -610,6 +610,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: idx
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          target: "_blank",
           className: item.className,
           href: item.url
         }, item.title));

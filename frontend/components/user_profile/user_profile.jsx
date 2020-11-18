@@ -34,11 +34,7 @@ export default class UserProfile extends React.Component {
                     <div className='photo-container-div'>
                         <Masonry
                             className='photo-index-masonry'
-                            breakpointCols={{
-                                default: 5,
-                                1000: 4,
-                                800: 2
-                            }}
+                            breakpointCols={{ default: 5, 1000: 4, 800: 2 }}
                             columnClassName='masonry-grid-column'
                         >
                             {userPhotos.map(photo => {

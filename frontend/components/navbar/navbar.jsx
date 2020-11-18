@@ -14,7 +14,7 @@ export default class NavBar extends React.Component{
                         {menuItems.map((item, idx) => {
                             return(
                                 <li key={idx}>
-                                    <a className={item.className} href={item.url}>
+                                    <a target='_blank' className={item.className} href={item.url}>
                                         {item.title}
                                     </a>
                                 </li>
