@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {menuItems} from './navbar_items';
 
 export default class NavBar extends React.Component{

@@ -36,14 +36,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Serendipitydeus/PXelation.git"
+    "url": "git+https://github.com/jonathan-calixto/PXelation.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Serendipitydeus/PXelation/issues"
+    "url": "https://github.com/jonathan-calixto/PXelation/issues"
   },
-  "homepage": "https://github.com/Serendipitydeus/PXelation#readme",
+  "homepage": "https://github.com/jonathan-calixto/PXelation#readme",
   "devDependencies": {}
 }

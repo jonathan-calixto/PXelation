@@ -57,7 +57,6 @@ export default class SessionForm extends React.Component {
             return (
                 <div className='signup-form'>
                     <form className='form-class' onSubmit={this.handleSubmit}>
-                        {/* <h3><span>Sign up to PXelation</span></h3> */}
                         <button onClick={this.demoUser}>Demo User</button>
                         <br/><br/>
                         <div className='p-spacer-div'><p>_______________________   or   _______________________</p></div>
