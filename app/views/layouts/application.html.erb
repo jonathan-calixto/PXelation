@@ -4,7 +4,14 @@
     <title>PXelation</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+     <meta property="og:title" content="PXelation" />
+     <meta property='og:image' content="<%= image_url('app/assets/images/PXelation.png') %>"/>
+     <meta property="og:description"
+       content="A place to share the worlds beauty through photography"
+     />
+     <meta property="og:url"
+       content="http://PXelation.herokuapp.com/"
+     />
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script src="https://kit.fontawesome.com/a5666e50f9.js" crossorigin="anonymous"></script>
